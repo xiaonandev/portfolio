@@ -98,9 +98,9 @@ export const footerSocialLinks = [
     href: 'https://github.com/dxn-forlearning-xd',
     icon: FaGithub,
   },
-  // {
-  //   label: 'linkedin',
-  //   href: 'https://www.linkedin.com/in/xiaonan-dong-63b56b259/',
-  //   icon: FaLinkedin,
-  // },
+  {
+    label: 'linkedin',
+    href: 'https://www.linkedin.com/in/xiaonan-dong-8993a6418/',
+    icon: FaLinkedin,
+  },
 ];
