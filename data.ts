@@ -46,6 +46,16 @@ export const projects = [
     demoUrl: 'https://dashboard-green-sigma-19.vercel.app/',
     githubUrl: 'https://github.com/dxn-forlearning-xd/dashboard',
   },
+  {
+    title: 'E-commerce App',
+    description:
+      'A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling.',
+    image: '/images/ecommerce.png',
+    techStack: ['React', 'Javascript', 'Chakra UI', 'API integration'],
+    demoUrl: 'https://ecommerce-project-psi-drab.vercel.app/',
+    githubUrl:
+      'https://github.com/dxn-forlearning-xd/ecommerce-project/tree/master',
+  },
 ];
 
 export const experiences = [
