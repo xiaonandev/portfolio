@@ -1,106 +1,121 @@
-import { Code2 } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Code2 } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const skillCategories = [
   {
-    title: 'Frontend',
+    title: "Frontend",
     skills: [
-      { name: 'React', icon: Code2 },
-      { name: 'React', icon: Code2 },
-      { name: 'React', icon: Code2 },
+      { name: "React", icon: Code2 },
+      { name: "React", icon: Code2 },
+      { name: "React", icon: Code2 },
     ],
   },
   {
-    title: 'Backend',
+    title: "Backend",
     skills: [
-      { name: 'React', icon: Code2 },
-      { name: 'React', icon: Code2 },
-      { name: 'React', icon: Code2 },
+      { name: "React", icon: Code2 },
+      { name: "React", icon: Code2 },
+      { name: "React", icon: Code2 },
     ],
   },
 ];
 
 export const projects = [
   {
-    title: 'Movies App',
+    title: "Music App",
     description:
-      'A URL-driven, API-powered interactive media browsing system with cinematic UI patterns.',
-    image: '/images/movie-app.png',
+      "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine.",
+    image: "/images/music-app.png",
     techStack: [
-      'Next.js',
-      'TypeScript',
-      'SWR',
-      'Swiper',
-      'API integration',
-      'Tailwind',
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "API integration",
+      "Tailwind",
     ],
-    demoUrl: 'https://movie-app-lkyu.vercel.app/movies',
-    githubUrl: 'https://github.com/dxn-forlearning-xd/movie-app',
+    demoUrl: "https://music-app-nu-liard.vercel.app/",
+    githubUrl: "https://github.com/dxn-forlearning-xd/music-app",
   },
   {
-    title: 'Dashboard',
+    title: "Movies App",
     description:
-      'A admin dashboard mockup featuring sidebar navigation and static data visualization blocks.',
-    image: '/images/dashboard.png',
-    techStack: ['React', 'TypeScript', 'Recharts', 'Tailwind'],
-    demoUrl: 'https://dashboard-green-sigma-19.vercel.app/',
-    githubUrl: 'https://github.com/dxn-forlearning-xd/dashboard',
+      "A URL-driven, API-powered interactive media browsing system with cinematic UI patterns.",
+    image: "/images/movie-app.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "SWR",
+      "Swiper",
+      "API integration",
+      "Tailwind",
+    ],
+    demoUrl: "https://movie-app-lkyu.vercel.app/movies",
+    githubUrl: "https://github.com/dxn-forlearning-xd/movie-app",
   },
   {
-    title: 'E-commerce App',
+    title: "Dashboard",
     description:
-      'A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling.',
-    image: '/images/ecommerce.png',
-    techStack: ['React', 'Javascript', 'Chakra UI', 'API integration'],
-    demoUrl: 'https://ecommerce-project-psi-drab.vercel.app/',
+      "A admin dashboard mockup featuring sidebar navigation and static data visualization blocks.",
+    image: "/images/dashboard.png",
+    techStack: ["React", "TypeScript", "Recharts", "Tailwind"],
+    demoUrl: "https://dashboard-green-sigma-19.vercel.app/",
+    githubUrl: "https://github.com/dxn-forlearning-xd/dashboard",
+  },
+  {
+    title: "E-commerce App",
+    description:
+      "A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling.",
+    image: "/images/ecommerce.png",
+    techStack: ["React", "Javascript", "Chakra UI", "API integration"],
+    demoUrl: "https://ecommerce-project-psi-drab.vercel.app/",
     githubUrl:
-      'https://github.com/dxn-forlearning-xd/ecommerce-project/tree/master',
+      "https://github.com/dxn-forlearning-xd/ecommerce-project/tree/master",
   },
 ];
 
 export const experiences = [
   {
-    type: 'work',
-    title: 'Junior Frontend Developer',
-    company: 'Science Infinity Technology Limited',
-    period: 'Sep 2025 - Jan 2026',
+    type: "work",
+    title: "Junior Frontend Developer",
+    company: "Science Infinity Technology Limited",
+    period: "Sep 2025 - Jan 2026",
     description:
-      'This role involved standard web development and layout building within an agile team. Daily work focused on working together with backend engineers for API routing, syncing with UI/UX designers to implement designs, and communicating with the mobile app team for cross-platform pages.',
+      "This role involved standard web development and layout building within an agile team. Daily work focused on working together with backend engineers for API routing, syncing with UI/UX designers to implement designs, and communicating with the mobile app team for cross-platform pages.",
   },
   {
-    type: 'work',
-    title: 'Transition period',
-    company: '',
-    period: '2022-2025',
+    type: "work",
+    title: "Transition period",
+    company: "",
+    period: "2022-2025",
     description:
-      'Career transition period working in music composition and English teaching, while gradually shifting focus toward frontend development through self-learning and personal projects.',
+      "Career transition period working in music composition and English teaching, while gradually shifting focus toward frontend development through self-learning and personal projects.",
   },
 
   {
-    type: 'uni',
-    title: 'MA of Arts Music Management',
-    company: 'The University of Sheffield',
-    period: '2021 - 2022',
-    description: '',
+    type: "uni",
+    title: "MA of Arts Music Management",
+    company: "The University of Sheffield",
+    period: "2021 - 2022",
+    description: "",
   },
   {
-    type: 'uni',
-    title: 'BA of Arts Musicology',
-    company: 'The University of Shandong',
-    period: '2017 - 2021',
-    description: '',
+    type: "uni",
+    title: "BA of Arts Musicology",
+    company: "The University of Shandong",
+    period: "2017 - 2021",
+    description: "",
   },
 ];
 
 export const footerSocialLinks = [
   {
-    label: 'github',
-    href: 'https://github.com/dxn-forlearning-xd',
+    label: "github",
+    href: "https://github.com/dxn-forlearning-xd",
     icon: FaGithub,
   },
   {
-    label: 'linkedin',
-    href: 'https://www.linkedin.com/in/xiaonan-dong-8993a6418/',
+    label: "linkedin",
+    href: "https://www.linkedin.com/in/xiaonan-dong-8993a6418/",
     icon: FaLinkedin,
   },
 ];
