@@ -1,0 +1,63 @@
+{
+  "Hero": {
+    "greeting": "Hi, I'm ",
+    "name": "Xiaonan Dong",
+    "role1": "Frontend Developer",
+    "role2": "React & TypeScript Developer",
+    "description": "Frontend Developer focused on building React and TypeScript applications.",
+    "viewProjects": "View Projects"
+  },
+  "About": {
+    "title1": "About",
+    "title2": "Me",
+    "description": "I focus on building interactive frontend applications using React and TypeScript. My work involves developing UI-heavy features and handling real-world application logic such as asynchronous data flows, state management, and multi-step user interactions. I am currently building personal projects to strengthen practical frontend engineering skills."
+  },
+  "Skills": {
+    "title1": "Technical",
+    "title2": "Skills",
+    "groups": {
+      "core": "Core",
+      "frontend": "Frontend & State",
+      "styling": "Styling & UI",
+      "tools": "Tools"
+    }
+  },
+  "Projects": {
+    "title1": "Featured",
+    "title2": "Projects",
+    "list": [
+      {
+        "title": "Music App",
+        "description": "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine."
+      },
+      {
+        "title": "Movies App",
+        "description": "A URL-driven, API-powered interactive media browsing system with cinematic UI patterns."
+      },
+      {
+        "title": "Dashboard",
+        "description": "A admin dashboard mockup featuring sidebar navigation and static data visualization blocks."
+      },
+      {
+        "title": "E-commerce App",
+        "description": "A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling."
+      }
+    ]
+  },
+  "Experience": {
+    "title1": "Professional",
+    "title2": "Experience",
+    "items": [
+      {
+        "title": "Junior Frontend Developer",
+        "description": "This role involved standard web development and layout building within an agile team. Daily work focused on working together with backend engineers for API routing, syncing with UI/UX designers to implement designs, and communicating with the mobile app team for cross-platform pages."
+      },
+      {
+        "title": "Transition period",
+        "description": "Career transition period working in music composition and English teaching, while gradually shifting focus toward frontend development through self-learning and personal projects."
+      },
+      { "title": "MA of Arts Music Management", "description": "" },
+      { "title": "BA of Arts Musicology", "description": "" }
+    ]
+  }
+}

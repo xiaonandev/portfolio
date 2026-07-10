@@ -1,0 +1,63 @@
+{
+  "Hero": {
+    "greeting": "Hoi, ik ben ",
+    "name": "Xiaonan Dong",
+    "role1": "Frontend Developer",
+    "role2": "React & TypeScript Developer",
+    "description": "Frontend Developer gericht op het bouwen van React- en TypeScript-applicaties.",
+    "viewProjects": "Bekijk Projecten"
+  },
+  "About": {
+    "title1": "Over",
+    "title2": "Mij",
+    "description": "Ik focus me op het bouwen van interactieve frontend-applicaties met React en TypeScript. Mijn werk omvat het ontwikkelen van UI-intensieve functies en het afhandelen van complexe applicatielogica, zoals asynchrone datastromen, state management en interacties in meerdere stappen. Momenteel bouw ik aan persoonlijke projecten om mijn praktische frontend-engineeringvaardigheden te versterken."
+  },
+  "Skills": {
+    "title1": "Technische",
+    "title2": "Vaardigheden",
+    "groups": {
+      "core": "Kern",
+      "frontend": "Frontend & State",
+      "styling": "Styling & UI",
+      "tools": "Tools"
+    }
+  },
+  "Projects": {
+    "title1": "Uitgelichte",
+    "title2": "Projecten",
+    "items": [
+      {
+        "title": "Muziek App",
+        "description": "Een moderne webgebaseerde muziekspeler met real-time afspeelsynchronisatie, dynamisch afspeellijstbeheer en een robuuste audio-engine op basis van global state."
+      },
+      {
+        "title": "Films App",
+        "description": "Een URL-gestuurd, interactief mediabrowsingsysteem aangedreven door API's met filmische UI-patronen."
+      },
+      {
+        "title": "Dashboard",
+        "description": "Een mockup voor een admin-dashboard met zijbalknavigatie en blokken voor statische datavisualisatie."
+      },
+      {
+        "title": "E-commerce App",
+        "description": "Een responsieve e-commerce frontend met productbrowsing, winkelwagenbeheer en persistente state-afhandeling tussen pagina's."
+      }
+    ]
+  },
+  "Experience": {
+    "title1": "Ervaring &",
+    "title2": "Opleiding",
+    "items": [
+      {
+        "title": "Junior Frontend Developer",
+        "description": "Deze rol omvatte standaard webontwikkeling en het bouwen van layouts binnen een agile team. Mijn dagelijkse werk bestond uit samenwerken met backend-engineers voor API-routing, afstemmen met UI/UX-designers om ontwerpen te implementeren en communiceren met het mobiele team voor cross-platform pagina's."
+      },
+      {
+        "title": "Overgangsperiode",
+        "description": "Carrière-overgangsperiode waarin ik werkte in muziekcompositie en als docent Engels, terwijl ik me geleidelijk meer richtte op frontend-ontwikkeling via zelfstudie en persoonlijke projecten."
+      },
+      { "title": "MA in Music Management", "description": "" },
+      { "title": "BA in Musicologie", "description": "" }
+    ]
+  }
+}

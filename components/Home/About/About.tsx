@@ -1,12 +1,17 @@
 import SectionHeading from '@/components/Helper/SectionHeading';
 import Image from 'next/image';
-import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const About = () => {
+  const t = useTranslations('About');
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div id="about" data-aos="fade-up">
-        <SectionHeading title_1={'About'} title_2={'Me'} description="" />
+      <div id="about">
+        <SectionHeading
+          title_1={t('title1')}
+          title_2={t('title2')}
+          description=""
+        />
         <div className="grid w-[80%] mx-auto md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden p-2">
@@ -21,12 +26,7 @@ const About = () => {
           </div>
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              I focus on building interactive frontend applications using React
-              and TypeScript. My work involves developing UI-heavy features and
-              handling real-world application logic such as asynchronous data
-              flows, state management, and multi-step user interactions. I am
-              currently building personal projects to strengthen practical
-              frontend engineering skills.
+              {t('description')}
             </p>
           </div>
         </div>

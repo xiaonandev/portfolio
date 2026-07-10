@@ -6,21 +6,12 @@ import { Navlinks } from '@/Constant/Constant';
 import { Download, MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
 type Props = {
   openNav: () => void;
 };
 
 const Nav = ({ openNav }: Props) => {
-  const [navBG, setNavBg] = useState(false);
-  useEffect(() => {
-    const handler = () => {
-      if (window.scrollY > 90) setNavBg(true);
-      if (window.scrollY < 90) setNavBg(false);
-    };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
-
   const navItemList = Navlinks.map((link, index) => (
     <Link
       className="dark:text-white text-black hover:text-cyan-800 dark:hover:text-[#FFAE6E] font-semibold transition-all duration-200"
@@ -32,7 +23,16 @@ const Nav = ({ openNav }: Props) => {
   ));
   return (
     <div
-      className={`${navBG ? 'dark:bg-gray-800 bg-white shadow-md' : 'fixed'} transition-all duration-200 h-[12vh] z-100 fixed w-full`}
+      className="
+        fixed
+        top-0
+        w-full
+        h-[12vh]
+        z-100
+        bg-white
+        dark:bg-gray-800
+        shadow-md
+      "
     >
       <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
         <Logo />
@@ -51,6 +51,7 @@ const Nav = ({ openNav }: Props) => {
             </span>
           </a>
           <ThemeToggler />
+          <LanguageSwitcher />
           <MenuIcon
             onClick={openNav}
             className="w-8 h-8 cursor-pointer text-black dark:text-white lg:hidden"
