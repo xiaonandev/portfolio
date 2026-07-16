@@ -4,13 +4,13 @@
     "name": "Xiaonan Dong",
     "role1": "Frontend Developer",
     "role2": "React & TypeScript Developer",
-    "description": "Frontend Developer gericht op het bouwen van React- en TypeScript-applicaties.",
+    "description": "Frontend Developer gespecialiseerd in React en TypeScript, met praktijkervaring in full-stack integratie en backend-architectuur.",
     "viewProjects": "Bekijk Projecten"
   },
   "About": {
     "title1": "Over",
     "title2": "Mij",
-    "description": "Ik focus me op het bouwen van interactieve frontend-applicaties met React en TypeScript. Mijn werk omvat het ontwikkelen van UI-intensieve functies en het afhandelen van complexe applicatielogica, zoals asynchrone datastromen, state management en interacties in meerdere stappen. Momenteel bouw ik aan persoonlijke projecten om mijn praktische frontend-engineeringvaardigheden te versterken."
+    "description": "Frontend-ontwikkelaar met een passie voor het bouwen van interactieve, pixel-perfect gebruikersinterfaces. Ik beschik over een sterke basis in React en TypeScript. Recentelijk heb ik mijn expertise uitgebreid naar full-stack ontwikkeling, waardoor ik in staat ben om end-to-end functies te realiseren — van het ontwerpen van databaseschema's met Prisma tot het beheren van veilige gebruikersauthenticatie. Dit geeft mij een breder perspectief op de naadloze integratie tussen frontend en backend."
   },
   "Skills": {
     "title1": "Technische",
@@ -18,6 +18,7 @@
     "groups": {
       "core": "Kern",
       "frontend": "Frontend & State",
+      "backend": "Backend & Database",
       "styling": "Styling & UI",
       "tools": "Tools"
     }
@@ -26,6 +27,10 @@
     "title1": "Uitgelichte",
     "title2": "Projecten",
     "items": [
+      {
+        "title": "Vacatureplatform",
+        "description": "een full-stack vacatureportal ontworpen om het zoeken en plaatsen van vacatures te stroomlijnen. Gebouwd met een focus op geauthenticeerde gebruikerssessies en datagestuurde interacties."
+      },
       {
         "title": "Muziek App",
         "description": "Een moderne webgebaseerde muziekspeler met real-time afspeelsynchronisatie, dynamisch afspeellijstbeheer en een robuuste audio-engine op basis van global state."

@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { usePathname, useRouter } from '@/src/i18n/navigation';
-import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from "@/src/i18n/navigation";
+import { useLocale } from "next-intl";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'nl', name: 'Nederlands' },
-  { code: 'ja', name: '日本語' },
+  { code: "en", name: "English" },
+  { code: "nl", name: "Nederlands" },
+  // { code: 'ja', name: '日本語' },
 ] as const;
 
 const LanguageSwitcher = () => {
@@ -33,17 +33,17 @@ const LanguageSwitcher = () => {
     };
 
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscape);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen]);
 

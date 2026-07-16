@@ -4,13 +4,13 @@
     "name": "Xiaonan Dong",
     "role1": "Frontend Developer",
     "role2": "React & TypeScript Developer",
-    "description": "Frontend Developer focused on building React and TypeScript applications.",
+    "description": "Frontend Developer focused on React and TypeScript, with hands-on experience in full-stack integration and backend architecture.",
     "viewProjects": "View Projects"
   },
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "I focus on building interactive frontend applications using React and TypeScript. My work involves developing UI-heavy features and handling real-world application logic such as asynchronous data flows, state management, and multi-step user interactions. I am currently building personal projects to strengthen practical frontend engineering skills."
+    "description": "Frontend Developer with a passion for building interactive, pixel-perfect user interfaces. I have a strong foundation in React and TypeScript. Recently, I have been expanding my expertise into full-stack development, enabling me to handle end-to-end features—from designing database schemas with Prisma to managing secure user authentication—which gives me a broader perspective on how frontend and backend seamlessly integrate."
   },
   "Skills": {
     "title1": "Technical",
@@ -18,6 +18,8 @@
     "groups": {
       "core": "Core",
       "frontend": "Frontend & State",
+      "backend": "Backend & Database",
+
       "styling": "Styling & UI",
       "tools": "Tools"
     }
@@ -26,6 +28,10 @@
     "title1": "Featured",
     "title2": "Projects",
     "list": [
+      {
+        "title": "Job Board Platform",
+        "description": "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions."
+      },
       {
         "title": "Music App",
         "description": "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine."
