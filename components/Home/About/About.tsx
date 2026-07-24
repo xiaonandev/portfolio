@@ -17,7 +17,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden p-2">
               <Image
-                src={"/images/selfie-1.jpg"}
+                src={"/images/selfie-01.jpg"}
                 alt="selfie"
                 width={1238}
                 height={1280}
