@@ -8,6 +8,7 @@ import Project from './Project/Project';
 import Experience from './Experience/Experience';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import BeyondCoding from './BeyondCoding/BeyondCoding';
 const Home = () => {
   useEffect(() => {
     const initAOS = async () => {
@@ -28,6 +29,7 @@ const Home = () => {
       <Skills />
       <Project />
       <Experience />
+      <BeyondCoding />
     </div>
   );
 };

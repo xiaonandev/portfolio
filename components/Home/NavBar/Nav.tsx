@@ -5,7 +5,6 @@ import ThemeToggler from '@/components/Helper/ThemeToggler';
 import { Navlinks } from '@/Constant/Constant';
 import { Download, MenuIcon } from 'lucide-react';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 type Props = {
   openNav: () => void;
@@ -41,8 +40,8 @@ const Nav = ({ openNav }: Props) => {
         </div>
         <div className="flex items-center space-x-4">
           <a
-            href="/cv/Xiaonan Dong CV Frontend.pdf"
-            download="Xiaonan Dong CV Frontend.pdf"
+            href="/cv/Xiaonan Dong CV.pdf"
+            download="Xiaonan Dong CV.pdf"
             className="box-border relative z-20 inline-flex items-center justify-center w-auto px-6 sm:px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-cyan-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-cyan-300 ring-offset-cyan-200 hover:ring-offset-cyan-500 ease focus:outline-none"
           >
             <span className="relative z-20 flex items-center space-x-2 text-sm">
@@ -52,6 +51,13 @@ const Nav = ({ openNav }: Props) => {
           </a>
           <ThemeToggler />
           <LanguageSwitcher />
+          <a
+            href="#beyondcoding"
+            className="hidden lg:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 hover:border-pink-500/30 hover:text-gray-500 dark:bg-gray-800 dark:border-transparent dark:text-slate-500 dark:hover:border-pink-500/30 dark:hover:text-slate-300"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse"></span>
+            Beyond Coding
+          </a>
           <MenuIcon
             onClick={openNav}
             className="w-8 h-8 cursor-pointer text-black dark:text-white lg:hidden"

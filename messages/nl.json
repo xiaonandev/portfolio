@@ -4,13 +4,13 @@
     "name": "Xiaonan Dong",
     "role1": "Frontend Developer",
     "role2": "React & TypeScript Developer",
-    "description": "Frontend Developer gespecialiseerd in React en TypeScript, met praktijkervaring in full-stack integratie en backend-architectuur.",
+    "description": "Frontend Developer gespecialiseerd in React en TypeScript, met een groeiende interesse in full-stack development.",
     "viewProjects": "Bekijk Projecten"
   },
   "About": {
     "title1": "Over",
     "title2": "Mij",
-    "description": "Frontend-ontwikkelaar met een passie voor het bouwen van interactieve, pixel-perfect gebruikersinterfaces. Ik beschik over een sterke basis in React en TypeScript. Recentelijk heb ik mijn expertise uitgebreid naar full-stack ontwikkeling, waardoor ik in staat ben om end-to-end functies te realiseren — van het ontwerpen van databaseschema's met Prisma tot het beheren van veilige gebruikersauthenticatie. Dit geeft mij een breder perspectief op de naadloze integratie tussen frontend en backend."
+    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een frontend developer die graag interactieve en gepolijste webervaringen bouwt.\n\nMijn belangrijkste tools zijn React en TypeScript. Ik vind het leuk om UI-ontwerpen om te zetten in werkende applicaties, complexe state management op te lossen en aandacht te besteden aan de kleine details die interfaces soepel en intuïtief maken.\n\nIk vind het ook interessant om het grotere geheel te begrijpen, daarom verdiep ik me in hoe frontend-applicaties verbinding maken met backend-systemen met behulp van tools zoals Prisma en PostgreSQL.\n\nIk blijf graag leren en betekenisvolle producten bouwen. 😊"
   },
   "Skills": {
     "title1": "Technische",
@@ -64,5 +64,9 @@
       { "title": "MA in Music Management", "description": "" },
       { "title": "BA in Musicologie", "description": "" }
     ]
+  },
+  "BeyondCoding": {
+    "title1": "Beyond",
+    "title2": "Coding"
   }
 }

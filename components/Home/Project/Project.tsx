@@ -18,7 +18,7 @@ const Project = () => {
 
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div id="projects">
+      <section id="projects">
         <SectionHeading
           title_1={t('title1')}
           title_2={t('title2')}
@@ -29,7 +29,7 @@ const Project = () => {
             <ProjectCard key={index} {...project} />
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

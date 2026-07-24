@@ -10,14 +10,9 @@ const Experience = () => {
     description: string;
   }>;
 
-  const experienceList = experiences.map((exp, index) => ({
-    ...exp,
-    title: translatedItems[index]?.title || exp.title,
-    description: translatedItems[index]?.description || exp.description,
-  }));
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div id="experience">
+      <section id="experience">
         <SectionHeading
           title_1={t('title1')}
           title_2={t('title2')}
@@ -66,7 +61,7 @@ const Experience = () => {
             );
           })}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
