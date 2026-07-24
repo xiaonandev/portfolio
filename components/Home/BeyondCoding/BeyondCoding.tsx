@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React, { useRef } from 'react';
+import Image from "next/image";
+import React, { useRef } from "react";
 
 const BeyondCoding = () => {
   const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
@@ -67,7 +67,7 @@ const BeyondCoding = () => {
                 </span>
                 <audio
                   ref={(el) => {
-                    audioRefs.current[0] = el;
+                    audioRefs.current[1] = el;
                   }}
                   onPlay={() => handlePlay(1)}
                   controls

@@ -64,16 +64,22 @@ const LanguageSwitcher = () => {
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className="
-          w-12
-          cursor-pointer
-          px-3
-          py-1
-          rounded-full
-          border
-          border-gray-400
-          hover:text-cyan-600
-          transition-colors
-        "
+      w-10
+      h-8
+      inline-flex
+      items-center
+      justify-center
+      cursor-pointer
+      rounded-full
+      text-xs
+      font-medium
+      text-cyan-500
+      border
+      border-cyan-500/40
+      hover:bg-cyan-500/10
+      hover:border-cyan-500
+      transition-all
+    "
       >
         {locale.toUpperCase()}
       </button>
@@ -82,19 +88,20 @@ const LanguageSwitcher = () => {
         <div
           role="listbox"
           className="
-            absolute
-            right-0
-            mt-2
-            w-36
-            py-2
-            bg-white
-            dark:bg-slate-800
-            rounded-lg
-            shadow-xl
-            border
-            dark:border-slate-700
-            z-50
-          "
+        absolute
+        right-0
+        mt-2
+        w-36
+        py-2
+        bg-white
+        dark:bg-slate-800
+        rounded-lg
+        shadow-xl
+        border
+        border-slate-200
+        dark:border-slate-700
+        z-50
+      "
         >
           {languages.map((lang) => (
             <button
@@ -104,14 +111,19 @@ const LanguageSwitcher = () => {
               aria-selected={locale === lang.code}
               onClick={() => switchLocale(lang.code)}
               className="
-                block
-                w-full
-                text-left
-                px-4
-                py-2
-                hover:bg-gray-100
-                dark:hover:bg-slate-700
-              "
+            block
+            w-full
+            text-left
+            px-4
+            py-2
+            text-xs
+            text-slate-700
+            dark:text-slate-200
+            hover:bg-gray-100
+            dark:hover:bg-slate-700
+            transition-colors
+            cursor-pointer
+          "
             >
               {lang.name}
             </button>

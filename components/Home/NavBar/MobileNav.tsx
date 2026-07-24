@@ -1,7 +1,7 @@
-'use client';
-import { Navlinks } from '@/Constant/Constant';
-import { X } from 'lucide-react';
-import Link from 'next/link';
+"use client";
+import { Navlinks } from "@/Constant/Constant";
+import { X } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   showNav: boolean;
@@ -16,7 +16,7 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
     </Link>
   ));
 
-  const sidebarOpenClose = showNav ? 'translate-x-0' : 'translate-x-[-100%]';
+  const sidebarOpenClose = showNav ? "translate-x-0" : "translate-x-[-100%]";
   return (
     <div>
       <div
@@ -31,7 +31,7 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
 
         <a
           href="#beyondcoding"
-          className="group relative inline-flex items-center gap-2 mt-5 mx-9 px-3 py-1.5 rounded-md text-xs font-medium text-slate-300 bg-white/3 border border-white/8 backdrop-blur-md transition-all duration-300 hover:bg-white/8 hover:border-pink-500/40 hover:text-white hover:shadow-[0_0_15px_rgba(244,114,182,0.15)] w-fit"
+          className="group relative inline-flex items-center gap-2 mt-6 mx-12 px-3 py-1.5 rounded-md text-xs font-medium text-slate-300 bg-white/3 border border-white/8 backdrop-blur-md transition-all duration-300 hover:bg-white/8 hover:border-pink-500/40 hover:text-white hover:shadow-[0_0_15px_rgba(244,114,182,0.15)] w-fit"
         >
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>

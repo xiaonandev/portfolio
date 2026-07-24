@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Logo from '@/components/Helper/Logo';
-import ThemeToggler from '@/components/Helper/ThemeToggler';
-import { Navlinks } from '@/Constant/Constant';
-import { Download, MenuIcon } from 'lucide-react';
-import Link from 'next/link';
-import LanguageSwitcher from './LanguageSwitcher';
+import Logo from "@/components/Helper/Logo";
+import ThemeToggler from "@/components/Helper/ThemeToggler";
+import { Navlinks } from "@/Constant/Constant";
+import { Download, MenuIcon } from "lucide-react";
+import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
 type Props = {
   openNav: () => void;
 };
@@ -42,7 +42,7 @@ const Nav = ({ openNav }: Props) => {
           <a
             href="/cv/Xiaonan Dong CV.pdf"
             download="Xiaonan Dong CV.pdf"
-            className="box-border relative z-20 inline-flex items-center justify-center w-auto px-6 sm:px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-cyan-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-cyan-300 ring-offset-cyan-200 hover:ring-offset-cyan-500 ease focus:outline-none"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-cyan-500 border border-cyan-500/40 rounded-full hover:bg-cyan-500/10 hover:border-cyan-500 transition-all"
           >
             <span className="relative z-20 flex items-center space-x-2 text-sm">
               <Download className="w-4 h-4" />

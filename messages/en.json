@@ -10,7 +10,7 @@
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "Hi, I'm Xiaonan.👋\n\nI’m a frontend developer who enjoys building interactive and polished web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nI’m always looking to learn and build meaningful products.😊"
+    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive and polished web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nI’m always looking to learn and build meaningful products. 😊"
   },
   "Skills": {
     "title1": "Technical",

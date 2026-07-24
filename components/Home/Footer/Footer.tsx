@@ -1,14 +1,12 @@
-import { footerSocialLinks } from '@/data';
-import React from 'react';
+import { footerSocialLinks } from "@/data";
+import React from "react";
 
 const Footer = () => {
   return (
     <footer className="border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 py-12">
       <div className="w-[80%] mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <a href="#home" className="text-xl font-bold text-cyan-700">
-            {'</>'}
-          </a>
+          <span className="text-xl font-bold text-cyan-600">{"</>"}</span>
           <div className="flex items-center gap-4">
             {footerSocialLinks.map((link) => (
               <a
