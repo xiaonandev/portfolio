@@ -29,6 +29,10 @@
     "title2": "Projects",
     "list": [
       {
+        "title": "Short-Video Platform",
+        "description": "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions."
+      },
+      {
         "title": "Job Board Platform",
         "description": "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions."
       },

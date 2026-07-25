@@ -28,6 +28,10 @@
     "title2": "Projecten",
     "items": [
       {
+        "title": "Short-Video Platform",
+        "description": "Een videobrowser-app met een verticale swipe-feed, een automatisch afspelende videospeler en een globale volumeregeling. Ondersteunt het opslaan van bladwijzers voor video's met lokale opslag en een profielgalerij om opgeslagen video's opnieuw te bekijken."
+      },
+      {
         "title": "Vacatureplatform",
         "description": "Een full-stack vacatureportal ontworpen om het zoeken en plaatsen van vacatures te stroomlijnen. Gebouwd met een focus op geauthenticeerde gebruikerssessies en datagestuurde interacties."
       },
