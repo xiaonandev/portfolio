@@ -32,10 +32,10 @@ const BeyondCoding = () => {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 h-40 group">
               <Image
-                src="/images/my-art.png"
+                src="/images/my-art-01.png"
                 alt="Art thumbnail"
                 fill
-                className="absolute object-cover filter blur-[2px] "
+                className="absolute object-cover filter"
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
             </div>
