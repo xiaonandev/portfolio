@@ -1,14 +1,15 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const projects = [
-  // {
-  //   title: 'Video Feed',
-  //   description: '.',
-  //   image: '/images/movie-app.png',
-  //   techStack: ['Next.js', 'TypeScript', 'SWR', 'API integration', 'Tailwind'],
-  //   demoUrl: 'https://video-feed-three.vercel.app/',
-  //   githubUrl: 'https://github.com/dxn-forlearning-xd/video-feed',
-  // },
+  {
+    title: "Short-Video Platform",
+    description:
+      "A video browsing app with a vertical swipe feed, auto-playing video player, and global volume control. Supports video bookmarking with local persistence and a profile gallery to replay saved videos.",
+    image: "/images/video-feed.png",
+    techStack: ["Next.js", "TypeScript", "SWR", "Zustand", "Tailwind"],
+    demoUrl: "https://video-feed-three.vercel.app/",
+    githubUrl: "https://github.com/dxn-forlearning-xd/video-feed",
+  },
   {
     title: "Job Board Platform",
     description:

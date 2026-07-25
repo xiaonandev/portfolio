@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
-import { FaGithub } from 'react-icons/fa';
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
 type Props = {
   title: string;
   description: string;
@@ -34,7 +34,7 @@ const ProjectCard = ({
         <h3 className="text-xl text-black dark:text-white font-semibold mb-2 group-hover:text-blue-500 transition-colors">
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+        <p className="text-muted-foreground text-sm mb-4 line-clamp-5">
           {description}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
@@ -52,7 +52,7 @@ const ProjectCard = ({
 
         <div className="flex gap-3">
           {demoUrl && (
-            <Button asChild size={'sm'} className="flex-1">
+            <Button asChild size={"sm"} className="flex-1">
               <a href={demoUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Live Demo
@@ -60,7 +60,7 @@ const ProjectCard = ({
             </Button>
           )}
           {githubUrl && (
-            <Button asChild variant={'outline'} size={'sm'} className="flex-1">
+            <Button asChild variant={"outline"} size={"sm"} className="flex-1">
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                 <FaGithub className="w-4 h-4 mr-2" />
               </a>
