@@ -8,7 +8,7 @@ const Skills = () => {
     {
       title: t("groups.core"),
       highlight: true,
-      skills: ["React", "TypeScript", "JavaScript (ES6+)"],
+      skills: ["React", "TypeScript", "Next.js", "JavaScript (ES6+)"],
     },
     {
       title: t("groups.frontend"),

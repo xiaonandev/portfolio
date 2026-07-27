@@ -14,7 +14,7 @@
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m always looking build meaningful products. ",
+    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m always looking to build meaningful products. ",
     "beyondLink": "Beyond coding: music, art and a little more about me"
   },
   "Skills": {
@@ -30,8 +30,8 @@
     }
   },
   "Projects": {
-    "title1": "Featured",
-    "title2": "Projects",
+    "title1": "Project",
+    "title2": "",
     "labels": {
       "highlights": "Key highlights",
       "caseStudy": "Read case study",
@@ -45,16 +45,11 @@
       {
         "title": "Short-Video Platform",
         "eyebrow": "Interaction & performance",
-        "description": "A mobile-first vertical video experience with continuous browsing, playback preferences and saved-video flows.",
+        "description": "A mobile-first video feed with viewport-aware rendering, coordinated media playback and persistent navigation state.",
         "highlights": [
-          "Continuous vertical feed with proactive video preloading",
-          "Shared playback, volume and bookmark state across routes"
-        ],
-        "caseStudy": {
-          "challenge": "Make a media-heavy feed feel immediate while keeping playback behaviour predictable as users move between videos and saved content.",
-          "approach": "Separated server data from UI state, preloaded upcoming media, and centralized playback preferences and bookmarks in a persisted Zustand store.",
-          "outcome": "A responsive viewing flow with seamless navigation between discovery and saved videos."
-        }
+          "Mounted only the active and adjacent videos while preserving scroll-snap layout with placeholders",
+          "Coordinated video, background audio, seeking and shared mute state across the feed"
+        ]
       },
       {
         "title": "Job Board Platform",
@@ -63,12 +58,7 @@
         "highlights": [
           "Authenticated job-seeker and employer workflows",
           "Type-safe relational data with Prisma and PostgreSQL"
-        ],
-        "caseStudy": {
-          "challenge": "Design one product around distinct user roles while keeping protected actions and data relationships understandable.",
-          "approach": "Built authenticated flows with Auth.js, modeled jobs and users in Prisma, and connected reusable forms and listings to server-side data.",
-          "outcome": "An end-to-end product demonstrating frontend delivery, authentication and database design."
-        }
+        ]
       },
       {
         "title": "Music App",
@@ -77,12 +67,7 @@
         "highlights": [
           "One synchronized audio engine across the application",
           "Queue, playlist and playback state designed as reusable actions"
-        ],
-        "caseStudy": {
-          "challenge": "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
-          "approach": "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
-          "outcome": "A cohesive player where navigation and playlist edits do not interrupt or desynchronize playback."
-        }
+        ]
       }
     ]
   },

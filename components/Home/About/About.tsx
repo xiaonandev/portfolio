@@ -5,12 +5,12 @@ import { ArrowDownRight, Briefcase, GraduationCap } from "lucide-react";
 
 const education = [
   {
-    degree: "MA Music Management",
+    degree: "MA in Music Management",
     school: "The University of Sheffield",
     period: "2021 – 2022",
   },
   {
-    degree: "BA Musicology",
+    degree: "BA in Musicology",
     school: "Shandong University",
     period: "2017 – 2021",
   },
