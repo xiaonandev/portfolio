@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
@@ -37,16 +37,35 @@ const ProjectCard = ({
   caseStudyUrl,
 }: Props) => {
   return (
-    <div className="group relative bg-white dark:bg-gray-900 shadow-sm hover:shadow-md rounded-2xl overflow-hidden flex flex-col h-full border border-gray-200/80 dark:border-gray-800 transition-all duration-300">
-      <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-800">
-        <Image
-          src={image}
-          alt={title}
-          width={400}
-          height={400}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+    <div className="group relative bg-white dark:bg-gray-900 shadow-sm hover:shadow-md rounded-2xl overflow-hidden flex flex-col h-full border border-gray-200/80 dark:border-gray-800 transition-all duration-300 focus-within:ring-2 focus-within:ring-cyan-600 focus-within:ring-offset-2 dark:focus-within:ring-cyan-400 dark:focus-within:ring-offset-gray-950">
+      {caseStudyUrl && (
+        <Link
+          href={caseStudyUrl}
+          aria-label={`Read ${title} case study`}
+          className="block cursor-pointer"
+        >
+          <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-800">
+            <Image
+              src={image}
+              alt={title}
+              width={400}
+              height={400}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        </Link>
+      )}
+      {!caseStudyUrl && (
+        <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-800">
+          <Image
+            src={image}
+            alt={title}
+            width={400}
+            height={400}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
 
       <div className="p-6 flex flex-col flex-1">
         {eyebrow && (
@@ -54,8 +73,14 @@ const ProjectCard = ({
             {eyebrow}
           </p>
         )}
-        <h3 className="text-xl text-gray-900 dark:text-gray-100 font-semibold mb-2 group-hover:text-cyan-700 dark:group-hover:text-cyan-600 transition-colors">
-          {title}
+        <h3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-cyan-700 dark:text-gray-100 dark:group-hover:text-cyan-600">
+          {caseStudyUrl ? (
+            <Link href={caseStudyUrl} className="cursor-pointer">
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
         </h3>
 
         <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
@@ -99,7 +124,7 @@ const ProjectCard = ({
         {caseStudyUrl && (
           <Link
             href={caseStudyUrl}
-            className="group/cs mb-5 flex items-center justify-between rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm font-semibold text-cyan-600 transition-all duration-200 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:shadow-sm dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-500 dark:hover:bg-cyan-400/20"
+            className="group/cs mb-5 flex cursor-pointer items-center justify-between rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm font-semibold text-cyan-600 transition-all duration-200 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:shadow-sm dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-500 dark:hover:bg-cyan-400/20"
           >
             <span className="flex items-center gap-2">{labels.caseStudy}</span>
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/cs:translate-x-1" />
@@ -108,7 +133,7 @@ const ProjectCard = ({
 
         <div className="flex gap-2.5">
           {demoUrl && (
-            <Button asChild size="sm" className="flex-1 text-xs">
+            <Button asChild size="sm" className="flex-1 cursor-pointer text-xs">
               <a href={demoUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
                 {labels.demo}
@@ -120,7 +145,7 @@ const ProjectCard = ({
               asChild
               variant="outline"
               size="sm"
-              className="flex-1 text-xs"
+              className="flex-1 cursor-pointer text-xs"
             >
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                 <FaGithub className="w-3.5 h-3.5 mr-1.5" />

@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import BackButton from "./BackButton";
 
 type CaseStudyLayoutProps = {
   locale: string;
@@ -31,12 +32,7 @@ export default function CaseStudyLayout({
     <main className="min-h-screen bg-white text-gray-950 dark:bg-gray-950 dark:text-gray-50">
       <section className="border-b border-gray-200 bg-white px-6 pb-16 pt-32 dark:border-gray-800 dark:bg-gray-950">
         <div className="mx-auto max-w-6xl">
-          <Link
-            href={`/${locale}/#projects`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-950 dark:text-cyan-300 dark:hover:text-cyan-200"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to projects
-          </Link>
+          <BackButton />
           <div
             className={`mt-10 grid gap-10 ${
               image ? "lg:grid-cols-[1.05fr_.95fr] lg:items-center" : ""
