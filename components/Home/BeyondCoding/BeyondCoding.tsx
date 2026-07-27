@@ -11,8 +11,8 @@ const BeyondCoding = () => {
     });
   };
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
-      <section id="beyondcoding" className="py-16 px-6 max-w-4xl mx-auto">
+    <div className="bg-gray-100 dark:bg-gray-900">
+      <section id="beyondcoding" className="py-24 px-6 max-w-4xl mx-auto">
         <div className="mb-6 border-l-2 border-cyan-500/40 pl-3">
           <h2 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-200 tracking-tight flex items-center gap-2">
             Beyond Coding

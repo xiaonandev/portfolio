@@ -1,16 +1,21 @@
 {
   "Hero": {
-    "greeting": "Hoi, ik ben ",
-    "name": "Xiaonan Dong",
-    "role1": "Frontend Developer",
-    "role2": "React & TypeScript Developer",
-    "description": "Frontend Developer gespecialiseerd in React en TypeScript, met een groeiende interesse in full-stack development.",
-    "viewProjects": "Bekijk Projecten"
+    "availability": "Beschikbaar voor frontendfuncties",
+    "role": "Frontend Developer · React · TypeScript",
+    "greeting": "I’m Xiaonan",
+    "headline": " Frontend Developer",
+    "description": "React en TypeScript-developer met commerciële ervaring in mediaworkflows, cross-platform interfaces en interne beheertools.",
+    "viewProjects": "Bekijk geselecteerd werk",
+    "downloadCv": "Download CV",
+    "location": "Woonachtig in Nederland",
+    "visa": "Zoekjaar Visa",
+    "authorization": "Volledige werkvergunning"
   },
   "About": {
     "title1": "Over",
     "title2": "Mij",
-    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een frontend developer die graag interactieve en gepolijste webervaringen bouwt.\n\nMijn belangrijkste tools zijn React en TypeScript. Ik vind het leuk om UI-ontwerpen om te zetten in werkende applicaties, complexe state management op te lossen en aandacht te besteden aan de kleine details die interfaces soepel en intuïtief maken.\n\nIk vind het ook interessant om het grotere geheel te begrijpen, daarom verdiep ik me in hoe frontend-applicaties verbinding maken met backend-systemen met behulp van tools zoals Prisma en PostgreSQL.\n\nIk blijf graag leren en betekenisvolle producten bouwen. 😊"
+    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een frontend developer die graag interactieve en gepolijste webervaringen bouwt.\n\nMijn belangrijkste tools zijn React en TypeScript. Ik vind het leuk om UI-ontwerpen om te zetten in werkende applicaties, complexe state management op te lossen en aandacht te besteden aan de kleine details die interfaces soepel en intuïtief maken.\n\nIk vind het ook interessant om het grotere geheel te begrijpen, daarom verdiep ik me in hoe frontend-applicaties verbinding maken met backend-systemen met behulp van tools zoals Prisma en PostgreSQL.\n\nIn mijn vorige frontendrol werkte ik samen met ontwerpers, backend engineers en een mobiel team. Ik blijf graag leren en betekenisvolle producten bouwen. ",
+    "beyondLink": "Beyond coding: muziek, kunst en iets meer over mij"
   },
   "Skills": {
     "title1": "Technische",
@@ -26,30 +31,57 @@
   "Projects": {
     "title1": "Uitgelichte",
     "title2": "Projecten",
+    "labels": {
+      "highlights": "Kernpunten",
+      "caseStudy": "Lees case",
+      "challenge": "Uitdaging",
+      "approach": "Aanpak",
+      "outcome": "Resultaat",
+      "demo": "Live demo",
+      "code": "Code"
+    },
     "items": [
       {
         "title": "Short-Video Platform",
-        "description": "Een videobrowser-app met een verticale swipe-feed, een automatisch afspelende videospeler en een globale volumeregeling. Ondersteunt het opslaan van bladwijzers voor video's met lokale opslag en een profielgalerij om opgeslagen video's opnieuw te bekijken."
+        "eyebrow": "Interactie & performance",
+        "description": "Een mobile-first verticale video-ervaring met continu browsen, afspeelvoorkeuren en opgeslagen video's.",
+        "highlights": [
+          "Doorlopende verticale feed met proactief video-preloaden",
+          "Gedeelde afspeel-, volume- en bookmarkstate tussen routes"
+        ],
+        "caseStudy": {
+          "challenge": "Een mediazware feed direct laten aanvoelen en afspeelgedrag voorspelbaar houden tussen video's en opgeslagen content.",
+          "approach": "Serverdata en UI-state gescheiden, aankomende media vooraf geladen en voorkeuren en bookmarks gecentraliseerd in een persistente Zustand-store.",
+          "outcome": "Een responsieve kijkervaring met naadloze navigatie tussen ontdekken en opgeslagen video's."
+        }
       },
       {
         "title": "Vacatureplatform",
-        "description": "Een full-stack vacatureportal ontworpen om het zoeken en plaatsen van vacatures te stroomlijnen. Gebouwd met een focus op geauthenticeerde gebruikerssessies en datagestuurde interacties."
+        "eyebrow": "Full-stack product",
+        "description": "Een vacatureportal die flows voor werkzoekenden en werkgevers koppelt aan relationele data.",
+        "highlights": [
+          "Geauthenticeerde flows voor werkzoekenden en werkgevers",
+          "Typeveilige relationele data met Prisma en PostgreSQL"
+        ],
+        "caseStudy": {
+          "challenge": "Verschillende gebruikersrollen in één product ondersteunen met begrijpelijke beveiligde acties en datarelaties.",
+          "approach": "Authenticatie gebouwd met Auth.js, vacatures en gebruikers gemodelleerd in Prisma en herbruikbare formulieren gekoppeld aan serverdata.",
+          "outcome": "Een end-to-end product dat frontend, authenticatie en databaseontwerp laat zien."
+        }
       },
       {
         "title": "Muziek App",
-        "description": "Een moderne webgebaseerde muziekspeler met real-time afspeelsynchronisatie, dynamisch afspeellijstbeheer en een robuuste audio-engine op basis van global state."
-      },
-      {
-        "title": "Films App",
-        "description": "Een URL-gestuurd, interactief mediabrowsingsysteem aangedreven door API's met filmische UI-patronen."
-      },
-      {
-        "title": "Dashboard",
-        "description": "Een mockup voor een admin-dashboard met zijbalknavigatie en blokken voor statische datavisualisatie."
-      },
-      {
-        "title": "E-commerce App",
-        "description": "Een responsieve e-commerce frontend met productbrowsing, winkelwagenbeheer en persistente state-afhandeling tussen pagina's."
+        "eyebrow": "State-architectuur",
+        "description": "Een webmuziekspeler met gesynchroniseerde afspeel-, wachtrij- en playlistbediening.",
+        "highlights": [
+          "Eén gesynchroniseerde audio-engine voor de hele applicatie",
+          "Wachtrij-, playlist- en afspeelstate als herbruikbare acties"
+        ],
+        "caseStudy": {
+          "challenge": "Playback, actieve track, bediening en playlists over meerdere delen van de interface synchroniseren.",
+          "approach": "Een centrale Zustand-audiostore en herbruikbare playercontrols ontworpen en externe muziekdata gekoppeld via een consistente API-laag.",
+          "outcome": "Een samenhangende speler waarin navigatie en playlistwijzigingen de playback niet onderbreken."
+        }
       }
     ]
   },
@@ -58,13 +90,10 @@
     "title2": "Opleiding",
     "items": [
       {
-        "title": "Junior Frontend Developer",
+        "title": "Frontend Developer",
         "description": "Deze rol omvatte standaard webontwikkeling en het bouwen van layouts binnen een agile team. Mijn dagelijkse werk bestond uit samenwerken met backend-engineers voor API-routing, afstemmen met UI/UX-designers om ontwerpen te implementeren en communiceren met het mobiele team voor cross-platform pagina's."
       },
-      {
-        "title": "Overgangsperiode",
-        "description": "Carrière-overgangsperiode waarin ik werkte in muziekcompositie en als docent Engels, terwijl ik me geleidelijk meer richtte op frontend-ontwikkeling via zelfstudie en persoonlijke projecten."
-      },
+
       { "title": "MA in Music Management", "description": "" },
       { "title": "BA in Musicologie", "description": "" }
     ]

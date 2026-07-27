@@ -8,7 +8,20 @@ export const projects = [
     image: "/images/video-feed.png",
     techStack: ["Next.js", "TypeScript", "SWR", "Zustand", "Tailwind"],
     demoUrl: "https://video-feed-three.vercel.app/",
-    githubUrl: "https://github.com/dxn-forlearning-xd/video-feed",
+    githubUrl: "https://github.com/xiaonandev/video-feed",
+    eyebrow: "Video and state",
+    highlights: [
+      "Only loads the current and nearby videos",
+      "Shares volume and saved-video state across pages",
+    ],
+    caseStudy: {
+      challenge:
+        "Make a media-heavy feed feel immediate while keeping playback behaviour predictable as users move between videos and saved content.",
+      approach:
+        "Separated server data from UI state, preloaded upcoming media, and centralized playback preferences and bookmarks in a persisted Zustand store.",
+      outcome:
+        "A responsive, mobile-first viewing flow with seamless navigation between discovery and saved videos.",
+    },
   },
   {
     title: "Job Board Platform",
@@ -23,9 +36,21 @@ export const projects = [
       "PostgreSQL",
       "Tailwind",
     ],
-    demoUrl:
-      "https://job-board-pmt3q38eb-dxn-forlearning-xds-projects.vercel.app/",
-    githubUrl: "https://github.com/dxn-forlearning-xd/job-board",
+    demoUrl: "https://job-board-pmt3q38eb-xiaonandevs-projects.vercel.app/",
+    githubUrl: "https://github.com/xiaonandev/job-board",
+    eyebrow: "Full-stack practice",
+    highlights: [
+      "Sign-in and separate user actions",
+      "Job and user data built with Prisma and PostgreSQL",
+    ],
+    caseStudy: {
+      challenge:
+        "Design one product around distinct user roles while keeping protected actions and data relationships understandable.",
+      approach:
+        "Built authenticated flows with Auth.js, modeled jobs and users in Prisma, and connected reusable form and listing patterns to server-side data.",
+      outcome:
+        "An end-to-end product that demonstrates frontend delivery alongside authentication, database design and deployment.",
+    },
   },
   {
     title: "Music App",
@@ -40,43 +65,55 @@ export const projects = [
       "Tailwind",
     ],
     demoUrl: "https://music-app-nu-liard.vercel.app/",
-    githubUrl: "https://github.com/dxn-forlearning-xd/music-app",
-  },
-  {
-    title: "Movies App",
-    description:
-      "A URL-driven, API-powered interactive media browsing system with cinematic UI patterns.",
-    image: "/images/movie-app.png",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "SWR",
-      "Swiper",
-      "API integration",
-      "Tailwind",
+    githubUrl: "https://github.com/xiaonandev/music-app",
+    eyebrow: "Audio and state",
+    highlights: [
+      "One audio player shared across the app",
+      "Queue, playlist and playback state managed with Zustand",
     ],
-    demoUrl: "https://movie-app-lkyu.vercel.app/movies",
-    githubUrl: "https://github.com/dxn-forlearning-xd/movie-app",
+    caseStudy: {
+      challenge:
+        "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
+      approach:
+        "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
+      outcome:
+        "A cohesive player experience where navigation and playlist edits do not interrupt or desynchronize playback.",
+    },
   },
-  {
-    title: "Dashboard",
-    description:
-      "A admin dashboard mockup featuring sidebar navigation and static data visualization blocks.",
-    image: "/images/dashboard.png",
-    techStack: ["React", "TypeScript", "Recharts", "Tailwind"],
-    demoUrl: "https://dashboard-green-sigma-19.vercel.app/",
-    githubUrl: "https://github.com/dxn-forlearning-xd/dashboard",
-  },
-  {
-    title: "E-commerce App",
-    description:
-      "A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling.",
-    image: "/images/ecommerce.png",
-    techStack: ["React", "Javascript", "Chakra UI", "API integration"],
-    demoUrl: "https://ecommerce-project-psi-drab.vercel.app/",
-    githubUrl:
-      "https://github.com/dxn-forlearning-xd/ecommerce-project/tree/master",
-  },
+  // {
+  //   title: "Movies App",
+  //   description:
+  //     "A URL-driven, API-powered interactive media browsing system with cinematic UI patterns.",
+  //   image: "/images/movie-app.png",
+  //   techStack: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "SWR",
+  //     "Swiper",
+  //     "API integration",
+  //     "Tailwind",
+  //   ],
+  //   demoUrl: "https://movie-app-lkyu.vercel.app/movies",
+  //   githubUrl: "https://github.com/xiaonandev/movie-app",
+  // },
+  // {
+  //   title: "Dashboard",
+  //   description:
+  //     "A admin dashboard mockup featuring sidebar navigation and static data visualization blocks.",
+  //   image: "/images/dashboard.png",
+  //   techStack: ["React", "TypeScript", "Recharts", "Tailwind"],
+  //   demoUrl: "https://dashboard-green-sigma-19.vercel.app/",
+  //   githubUrl: "https://github.com/xiaonandev/dashboard",
+  // },
+  // {
+  //   title: "E-commerce App",
+  //   description:
+  //     "A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling.",
+  //   image: "/images/ecommerce.png",
+  //   techStack: ["React", "Javascript", "Chakra UI", "API integration"],
+  //   demoUrl: "https://ecommerce-project-psi-drab.vercel.app/",
+  //   githubUrl: "https://github.com/xiaonandev/ecommerce-project/tree/master",
+  // },
 ];
 
 export const experiences = [
@@ -116,7 +153,7 @@ export const experiences = [
 export const footerSocialLinks = [
   {
     label: "github",
-    href: "https://github.com/dxn-forlearning-xd",
+    href: "https://github.com/xiaonandev",
     icon: FaGithub,
   },
   {

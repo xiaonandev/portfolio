@@ -1,16 +1,21 @@
 {
   "Hero": {
-    "greeting": "Hi, I'm ",
-    "name": "Xiaonan Dong",
-    "role1": "Frontend Developer",
-    "role2": "React & TypeScript Developer",
-    "description": "Frontend Developer specializing in React and TypeScript, with a growing interest in full-stack development.",
-    "viewProjects": "View Projects"
+    "availability": "Open to frontend opportunities",
+    "role": "Frontend Developer · React · TypeScript",
+    "greeting": "I’m Xiaonan",
+    "headline": " Frontend Developer",
+    "description": "React & TypeScript developer with commercial experience building media workflows, cross-platform interfaces, and internal administration tools.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "location": "Based in the Netherlands",
+    "visa": "Zoekjaar Visa",
+    "authorization": "Full work authorization"
   },
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive and polished web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nI’m always looking to learn and build meaningful products. 😊"
+    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m always looking build meaningful products. ",
+    "beyondLink": "Beyond coding: music, art and a little more about me"
   },
   "Skills": {
     "title1": "Technical",
@@ -27,30 +32,57 @@
   "Projects": {
     "title1": "Featured",
     "title2": "Projects",
-    "list": [
+    "labels": {
+      "highlights": "Key highlights",
+      "caseStudy": "Read case study",
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "outcome": "Outcome",
+      "demo": "Live demo",
+      "code": "Code"
+    },
+    "items": [
       {
         "title": "Short-Video Platform",
-        "description": "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions."
+        "eyebrow": "Interaction & performance",
+        "description": "A mobile-first vertical video experience with continuous browsing, playback preferences and saved-video flows.",
+        "highlights": [
+          "Continuous vertical feed with proactive video preloading",
+          "Shared playback, volume and bookmark state across routes"
+        ],
+        "caseStudy": {
+          "challenge": "Make a media-heavy feed feel immediate while keeping playback behaviour predictable as users move between videos and saved content.",
+          "approach": "Separated server data from UI state, preloaded upcoming media, and centralized playback preferences and bookmarks in a persisted Zustand store.",
+          "outcome": "A responsive viewing flow with seamless navigation between discovery and saved videos."
+        }
       },
       {
         "title": "Job Board Platform",
-        "description": "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions."
+        "eyebrow": "Full-stack product",
+        "description": "An authenticated job portal connecting job-seeker and employer workflows to relational data.",
+        "highlights": [
+          "Authenticated job-seeker and employer workflows",
+          "Type-safe relational data with Prisma and PostgreSQL"
+        ],
+        "caseStudy": {
+          "challenge": "Design one product around distinct user roles while keeping protected actions and data relationships understandable.",
+          "approach": "Built authenticated flows with Auth.js, modeled jobs and users in Prisma, and connected reusable forms and listings to server-side data.",
+          "outcome": "An end-to-end product demonstrating frontend delivery, authentication and database design."
+        }
       },
       {
         "title": "Music App",
-        "description": "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine."
-      },
-      {
-        "title": "Movies App",
-        "description": "A URL-driven, API-powered interactive media browsing system with cinematic UI patterns."
-      },
-      {
-        "title": "Dashboard",
-        "description": "A admin dashboard mockup featuring sidebar navigation and static data visualization blocks."
-      },
-      {
-        "title": "E-commerce App",
-        "description": "A responsive e-commerce frontend with product browsing, cart management, and persistent cross-page state handling."
+        "eyebrow": "State architecture",
+        "description": "A web music player with synchronized playback, queue and playlist controls across the interface.",
+        "highlights": [
+          "One synchronized audio engine across the application",
+          "Queue, playlist and playback state designed as reusable actions"
+        ],
+        "caseStudy": {
+          "challenge": "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
+          "approach": "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
+          "outcome": "A cohesive player where navigation and playlist edits do not interrupt or desynchronize playback."
+        }
       }
     ]
   },
@@ -59,15 +91,11 @@
     "title2": "Experience",
     "items": [
       {
-        "title": "Junior Frontend Developer",
-        "description": "This role involved standard web development and layout building within an agile team. Daily work focused on working together with backend engineers for API routing, syncing with UI/UX designers to implement designs, and communicating with the mobile app team for cross-platform pages."
+        "title": "Frontend Developer",
+        "description": "Delivered responsive web interfaces in an agile product team, partnering with UI/UX designers on implementation, backend engineers on API integration, and a mobile team on consistent cross-platform experiences."
       },
-      {
-        "title": "Transition period",
-        "description": "Career transition period working in music composition and English teaching, while gradually shifting focus toward frontend development through self-learning and personal projects."
-      },
-      { "title": "MA of Arts Music Management", "description": "" },
-      { "title": "BA of Arts Musicology", "description": "" }
+      { "title": "Master of Arts in Music Management ", "description": "" },
+      { "title": "Bachelor of Arts in Musicology", "description": "" }
     ]
   },
   "BeyondCoding": {

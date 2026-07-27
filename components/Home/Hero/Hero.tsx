@@ -1,46 +1,54 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { FolderOpen } from 'lucide-react';
-import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
-import { useTranslations } from 'next-intl';
+"use client";
+import { Button } from "@/components/ui/button";
+import { ArrowDownRight, Download, MapPin } from "lucide-react";
+import React from "react";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
-  const t = useTranslations('Hero');
+  const t = useTranslations("Hero");
 
   return (
     <div
       id="home"
-      className="relative min-h-screen bg-[radial-gradient(circle_476px_at_54.8%_51.5%,rgba(168,229,253,1)_0%,rgba(244,244,254,1)_42.3%,rgba(244,244,254,1)_100.2%)] flex items-center justify-center overflow-hidden dark:bg-[radial-gradient(circle_farthest-corner_at_50%_52.5%,rgba(14,53,92,1)_0%,rgba(16,14,72,1)_90%)]!"
+      className="relative bg-[radial-gradient(circle_520px_at_78%_42%,rgba(168,229,253,.8)_0%,rgba(244,244,254,1)_58%)] pt-28 pb-14 sm:pt-34 sm:pb-18 overflow-hidden dark:bg-[radial-gradient(circle_farthest-corner_at_75%_45%,rgba(14,53,92,1)_0%,rgba(16,14,72,1)_90%)]!"
     >
-      <div className="relative z-10 text-center mx-2">
-        <div className="sm:mb-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            {t('greeting')}{' '}
-            <span className="text-cyan-600 dark:text-[#FFAE6E]">
-              {t('name')}
-            </span>
+      <div className="relative z-10 w-[88%] max-w-6xl mx-auto">
+        <div className="max-w-4xl">
+          <h1 className="text-4xl font-bold leading-[1.08] tracking-tight ">
+            {t("greeting")}
           </h1>
-          <div className="text-xl sm:text-2xl md:text-3xl text-black dark:text-white font-semibold mb-4 sm:mb-8 h-12">
-            <TypeAnimation
-              key={t('role1')}
-              sequence={[t('role1'), 2000, t('role2'), 2000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="font-mono"
-            />
-          </div>
-          <p className="text-lg text-muted-foreground dark:text-gray-200 max-w-3xl mx-auto mb-10">
-            {t('description')}
+          <h2 className="text-3xl font-bold leading-[1.08] tracking-tight">
+            {t("headline")}
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground dark:text-gray-200 sm:text-xl">
+            {t("description")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size={'lg'} asChild className="w-fit mx-auto sm:mx-0">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button size="lg" asChild className="w-fit">
               <a href="#projects">
-                <FolderOpen className="w-5 h-5 mr-2" />
-                {t('viewProjects')}
+                {t("viewProjects")}
+                <ArrowDownRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="w-fit bg-white/60 dark:bg-white/5"
+            >
+              <a href="/cv/Xiaonan Dong CV.pdf" download>
+                <Download className="mr-2 h-5 w-5" />
+                {t("downloadCv")}
+              </a>
+            </Button>
+          </div>
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-foreground/75">
+            <span className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-cyan-700" />
+              {t("location")}
+            </span>
+            <span>{t("visa")}</span>
+            <span>{t("authorization")}</span>
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import Hero from './Hero/Hero';
 import About from './About/About';
 import Skills from './Skills/Skills';
 import Project from './Project/Project';
-import Experience from './Experience/Experience';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import BeyondCoding from './BeyondCoding/BeyondCoding';
@@ -25,10 +24,9 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <Hero />
-      <About />
-      <Skills />
       <Project />
-      <Experience />
+      <Skills />
+      <About />
       <BeyondCoding />
     </div>
   );

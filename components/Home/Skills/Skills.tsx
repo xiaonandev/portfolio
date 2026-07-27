@@ -1,42 +1,42 @@
-import SectionHeading from '@/components/Helper/SectionHeading';
-import { useTranslations } from 'next-intl';
+import SectionHeading from "@/components/Helper/SectionHeading";
+import { useTranslations } from "next-intl";
 
 const Skills = () => {
-  const t = useTranslations('Skills');
+  const t = useTranslations("Skills");
 
   const skillGroups = [
     {
-      title: t('groups.core'),
+      title: t("groups.core"),
       highlight: true,
-      skills: ['React', 'TypeScript', 'JavaScript (ES6+)'],
+      skills: ["React", "TypeScript", "JavaScript (ES6+)"],
     },
     {
-      title: t('groups.frontend'),
+      title: t("groups.frontend"),
       highlight: true,
-      skills: ['Zustand', 'REST API', 'HTML5', 'CSS3'],
+      skills: ["Zustand", "REST API", "HTML5", "CSS3"],
     },
+    // {
+    //   title: t('groups.backend'),
+    //   highlight: true,
+    //   skills: ['Next.js', 'Prisma', 'PostgreSQL', 'Supabase'],
+    // },
     {
-      title: t('groups.backend'),
-      highlight: true,
-      skills: ['Next.js', 'Prisma', 'PostgreSQL', 'Supabase'],
-    },
-    {
-      title: t('groups.styling'),
+      title: t("groups.styling"),
       highlight: false,
-      skills: ['Tailwind CSS', 'Material UI', 'Ant Design', 'Chakra UI'],
+      skills: ["Tailwind CSS", "Material UI", "Ant Design", "Chakra UI"],
     },
     {
-      title: t('groups.tools'),
+      title: t("groups.tools"),
       highlight: false,
-      skills: ['Git', 'ESLint', 'Postman'],
+      skills: ["Git", "ESLint", "Postman"],
     },
   ];
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div className="py-14 bg-gray-100 dark:bg-gray-900">
       <section id="skills">
         <SectionHeading
-          title_1={t('title1')}
-          title_2={t('title2')}
+          title_1={t("title1")}
+          title_2={t("title2")}
           description=""
         />
 
@@ -57,8 +57,8 @@ const Skills = () => {
                     className={`px-3 py-1 rounded-full text-sm border
                       ${
                         group.highlight
-                          ? 'border-cyan-500 text-cyan-600 dark:text-cyan-400'
-                          : 'border-gray-300 text-gray-600 dark:text-gray-300'
+                          ? "border-cyan-500 text-cyan-600 dark:text-cyan-400"
+                          : "border-gray-300 text-gray-600 dark:text-gray-300"
                       }`}
                   >
                     {skill}
