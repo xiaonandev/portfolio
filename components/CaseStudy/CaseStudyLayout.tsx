@@ -8,7 +8,6 @@ import BackButton from "./BackButton";
 type CaseStudyLayoutProps = {
   locale: string;
   title: string;
-  eyebrow?: string;
   description?: string;
   note?: string;
   image?: string;
@@ -20,7 +19,6 @@ type CaseStudyLayoutProps = {
 export default function CaseStudyLayout({
   locale,
   title,
-  eyebrow,
   description,
   note,
   image,
@@ -39,11 +37,6 @@ export default function CaseStudyLayout({
             }`}
           >
             <div className="max-w-3xl">
-              {eyebrow && (
-                <p className="text-xs font-semibold uppercase tracking-[.14em] text-gray-600 dark:text-gray-400">
-                  {eyebrow}
-                </p>
-              )}
               <h1 className="mt-4 text-5xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-6xl">
                 {title}
               </h1>

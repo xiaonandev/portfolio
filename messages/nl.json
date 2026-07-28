@@ -42,12 +42,15 @@
     },
     "items": [
       {
-        "title": "Short-Video Platform",
+        "title": "Video Feed",
         "eyebrow": "Interactie & performance",
-        "description": "Een mobile-first videofeed met viewport-bewuste rendering, gecoördineerde media-afspeling en behoud van de navigatiestatus.",
+
+        "description": "Een contentfeed die gericht is on viewport-aware rendering, incrementele datalading, permanente gebruikersstatus en het herstel van de navigatiecontext.",
         "highlights": [
-          "Rendert alleen de actieve en aangrenzende video's, terwijl de scroll-snap layout behouden blijft via placeholders",
-          "Coördineert video, achtergrondaudio, nauwkeurige navigatie op de tijdbalk en een gedeelde dempstatus over de hele feed"
+          "Viewport-aware rendering",
+          "Paginering & data-inladen",
+          "Systeembrede statusretentie",
+          "Context herstellen"
         ],
         "caseStudy": {
           "challenge": "Een mediazware feed direct laten aanvoelen en afspeelgedrag voorspelbaar houden tussen video's en opgeslagen content.",

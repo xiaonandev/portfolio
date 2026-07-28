@@ -43,12 +43,14 @@
     },
     "items": [
       {
-        "title": "Short-Video Platform",
+        "title": "Video Feed",
         "eyebrow": "Interaction & performance",
-        "description": "A mobile-first video feed with viewport-aware rendering, coordinated media playback and persistent navigation state.",
+        "description": "An content feed focused on viewport-aware rendering, incremental data loading, persistent user state, and navigation-context restoration.",
         "highlights": [
-          "Mounted only the active and adjacent videos while preserving scroll-snap layout with placeholders",
-          "Coordinated video, background audio, seeking and shared mute state across the feed"
+          "Viewport-aware rendering",
+          "Infinite data loading",
+          "Persistent cross-page state",
+          "Context restoration"
         ]
       },
       {

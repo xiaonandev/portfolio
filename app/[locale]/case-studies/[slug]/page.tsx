@@ -33,7 +33,6 @@ export default async function EmptyCaseStudy({
     <CaseStudyLayout
       locale={locale}
       title={project.title}
-      eyebrow="Independent project"
       description={project.description}
       image={project.image}
       demo={project.demo}

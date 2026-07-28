@@ -9,35 +9,76 @@ const overview = [
   ["Focus", "Media lifecycle, rendering, persistent state"],
 ];
 
-const decisions = [
+const challenges = [
+  "Rendering every item creates unnecessary DOM and resource usage.",
+  "The application must detect which item is currently active.",
+  "More data needs to load before the user reaches the end.",
+  "Saved data must remain consistent across the feed and profile views.",
+  "Returning to the feed should preserve the user’s previous position.",
+  "Persisted client state must not cause incorrect UI during hydration.",
+];
+
+const implementations = [
   {
     number: "01",
-    title: "Viewport-aware rendering",
-    copy: "The feed keeps the active video and its immediate neighbours mounted. Items outside that range are replaced with full-height placeholders, preserving the scroll-snap layout without keeping every video player active in the DOM.\n\nEach mounted player uses an IntersectionObserver with a visibility threshold to determine when it becomes active. Entering the viewport starts the video and accompanying audio; leaving it pauses both and reports the new active index to the parent feed.",
-    detail:
-      "Why this decision: Conditional rendering alone would collapse the page and change scroll positions. Keeping lightweight placeholders preserves the physical structure of the feed while reducing the number of mounted media elements.",
+    title: "Rendering Only the Relevant Items",
+    problem:
+      "Mounting every content item at once would create unnecessary browser work, especially because each item contains an interactive player and its own event handling.",
+    approach:
+      "Instead of keeping every video component mounted, the feed renders only the current item and the items directly before and after it. Items farther away are replaced with empty placeholders of the same size. This keeps the scroll position stable while reducing the number of active components on the page. I used CSS scroll snap to create a predictable vertical browsing experience and IntersectionObserver to detect which item is currently visible.",
   },
   {
     number: "02",
-    title: "Incremental loading",
-    copy: "Video pages are loaded with SWR Infinite and flattened into one feed. Rather than maintaining a separate scroll sentinel, the final implementation uses the active index as the pagination signal. When the user reaches the last few loaded items, the feed requests the next page.",
-    detail:
-      "This keeps pagination connected to the same state that controls the rendering window, although production code would also need stronger end-of-data and request-deduplication guards.",
+    title: "Loading More Data as the User Browses",
+    problem:
+      "Loading all available data upfront would increase the initial request and rendering cost. Loading only after reaching the exact end could instead leave the user waiting.",
+    approach:
+      "I used useSWRInfinite to manage paginated requests and flattened the returned pages into one list with useMemo. When the user gets close to the end of the loaded items, the application requests the next page in advance.",
   },
   {
     number: "03",
-    title: "Synchronize video, BGM and custom controls",
-    copy: "Each video is paired with a separate background-audio element. The video timeline acts as the source of truth: during time updates, the audio position is corrected when drift exceeds 0.8 seconds.\n\nThe custom progress bar converts the click position into a percentage of the element width, calculates the corresponding media time and updates both the video and audio elements. Play, pause, seek and mute actions therefore remain coordinated rather than being handled by unrelated controls.",
-    detail:
-      "Trade-off: Using separate video and audio elements gives explicit control over the sound layer, but it also creates synchronization and autoplay responsibilities that would not exist with a single media source.",
+    title: "Managing State Across Different Views",
+    problem:
+      "The application uses different types of state for different purposes. Putting all of them in one global store would make unrelated components dependent on each other and make temporary UI state persist longer than intended.",
+    approach:
+      "I use Zustand to store information that needs to be shared or preserved, including saved items and the previous feed position. And temporary interface state—such as selected items, an open modal —remains inside the page or component where it is used. This prevents short-lived interface state from unnecessarily becoming global.",
+  },
+  {
+    number: "04",
+    title: "Preserving User Context Across Views",
+    problem:
+      "When users open their saved collection and return to the main feed, returning to the beginning would lose their browsing context.",
+    approach:
+      "The feed stores the active index and reuses it after navigation. If the restored index is beyond the currently loaded dataset, its proximity to the end causes additional pages to load. Once the target item becomes available, the feed scrolls it back into view.",
+  },
+  {
+    number: "05",
+    title: "Handling Persisted State During Hydration",
+    problem:
+      "Saved-items view is stored in the browser so that it remains available after a refresh. However, zustand persistence is restored only after the application loads in the browser. Rendering Saved-items view before that process finishes can temporarily produce an incorrect empty state.",
+    approach:
+      "I added a hydration status to the store and delay the saved-items view until the restoration process is complete. This keeps the first visible state consistent with the stored data.",
   },
 ];
 
-const tradeoffs = [
-  "The placeholder approach reduces mounted media players but still retains one layout node for every loaded video.",
-  "The active index is persisted, but restoring by index assumes that API ordering remains stable between sessions.",
-  "Bookmarks currently store complete external API objects in local storage rather than normalized IDs or account-backed records.",
-  "Separate video and audio elements require synchronization logic and additional autoplay, accessibility and cross-browser testing.",
+const components = [
+  {
+    name: "FeedContainer",
+    desc: "pagination, active position and render window",
+  },
+  {
+    name: "VideoCard",
+    desc: "combines the content, controls and overlay for one item",
+  },
+  { name: "VideoPlayer", desc: "handles the item’s direct interactions" },
+  {
+    name: "SavedVideoGrid",
+    desc: "displays the saved collection and supports selection",
+  },
+  {
+    name: "SavedVideosModal",
+    desc: "reuses the feed experience inside the saved-items view",
+  },
 ];
 
 export default async function VideoFeedCaseStudy({
@@ -50,202 +91,146 @@ export default async function VideoFeedCaseStudy({
   return (
     <CaseStudyLayout
       locale={locale}
-      title="Short Video Platform"
-      eyebrow="Independent project · July 2026 – Present"
-      description="A mobile-first video feed exploring viewport-aware rendering, coordinated media playback, incremental loading and persistent navigation state."
-      note="Built independently with the Pexels API to revisit and extend media-interface patterns I previously encountered in commercial frontend work."
+      title="Video Feed"
+      description="A browsing application built to explore common frontend challenges found in interaction-heavy products: rendering long lists efficiently, loading data incrementally, preserving user state across routes, and restoring context when users return to a previous view."
       image="/images/video-feed.png"
       demo="https://video-feed-three.vercel.app/"
       github="https://github.com/xiaonandev/video-feed"
     >
-      <section className="px-6 py-5">
-        <div className="mx-auto max-w-6xl">
-          <p className="case-label">01 · Overview</p>
-          <div className="mt-6 grid overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="px-6 py-12 lg:py-20">
+        <div className="mx-auto max-w-4xl">
+          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
+            01 · Overview
+          </p>
+          <div className="mt-8 grid overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-3">
             {overview.map(([label, value]) => (
               <div
                 key={label}
-                className="border-b border-gray-200 p-5 last:border-b-0 dark:border-gray-800 sm:border-r"
+                className="border-b border-gray-200 p-6 last:border-b-0 dark:border-gray-800 sm:border-r"
               >
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   {label}
                 </p>
-                <p className="mt-2 font-medium">{value}</p>
+                <p className="mt-2 font-medium text-gray-900 dark:text-gray-100">
+                  {value}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20 dark:bg-gray-900">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[.7fr_1.3fr]">
-          <div>
-            <p className="case-label">02 · The Challenge</p>
-          </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+      <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
+        <div className="mx-auto max-w-4xl">
+          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
+            02 · The Challenge
+          </p>
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
             <p>
-              A continuously scrolling video feed creates several connected
-              frontend problems. Mounting every video keeps unnecessary media
-              elements alive, while independently controlled players can compete
-              for playback. Navigation introduces another challenge: opening a
-              saved-video view and returning to the feed should not reset the
-              user’s position.
+              A continuously scrolling feed introduces several connected
+              problems:
             </p>
-
-            <p>
-              I treated the feed as a coordination problem between four layers:
-              server-data pagination, the active rendering range, local media
-              state, and persisted navigation state. Each layer needed a clear
-              owner so that scrolling, playback and route changes would remain
-              predictable.
+            <ul className="grid gap-4 md:grid-cols-2 text-base">
+              {challenges.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-600" />
+                  <span className="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="pt-4 border-t border-gray-200 dark:border-gray-800">
+              The main challenge was coordinating these behaviours without
+              turning every piece of state into global state or tightly coupling
+              the feed to individual content cards.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <p className="case-label">03 · Key Technical Decisions</p>
+      <section className="px-6 py-16 lg:py-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
+            03 · Key Technical Decisions
+          </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {decisions.map((decision) => (
-              <article
-                key={decision.number}
-                className="flex flex-col justify-between rounded-2xl border border-gray-200 p-7 dark:border-gray-800"
-              >
-                <div>
-                  <span className="font-mono text-sm font-semibold text-cyan-700 dark:text-cyan-300">
-                    {decision.number}
+          <div className="mt-12 space-y-16">
+            {implementations.map((impl) => (
+              <article key={impl.number} className="relative">
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-50 mb-8 flex items-baseline gap-3">
+                  <span className="font-mono text-cyan-600 dark:text-cyan-400 text-xl">
+                    {impl.number}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold">{decision.title}</h3>
-                  <p className="mt-3 whitespace-pre-line leading-relaxed text-muted-foreground">
-                    {decision.copy}
-                  </p>
+                  {impl.title}
+                </h3>
+
+                <div className="grid gap-6 sm:grid-cols-[120px_1fr] items-start text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                  <div className="font-semibold text-gray-900 dark:text-gray-200 text-sm uppercase tracking-wider pt-1">
+                    Problem
+                  </div>
+                  <div className="whitespace-pre-line">{impl.problem}</div>
+
+                  <div className="font-semibold text-gray-900 dark:text-gray-200 text-sm uppercase tracking-wider pt-1">
+                    Approach
+                  </div>
+                  <div className="space-y-4">
+                    <div className="whitespace-pre-line">{impl.approach}</div>
+                  </div>
                 </div>
-                <p className="mt-6 border-t border-gray-200 pt-4 text-xs font-medium leading-relaxed text-gray-500 dark:border-gray-800 dark:text-gray-400">
-                  {decision.detail}
-                </p>
+
+                <div className="mt-16 h-px w-full bg-gray-100 dark:bg-gray-800/60 block last:hidden" />
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20 dark:bg-gray-900">
-        <div className="mx-auto max-w-6xl">
-          <p className="case-label">
-            04 · Persistent State & Position Restoration
+      <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
+        <div className="mx-auto max-w-4xl">
+          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
+            04 · Reusable Component Design
           </p>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground max-w-4xl">
-            <p>
-              The persisted store records the active feed index. After paginated
-              video data becomes available on a later visit, the feed resolves
-              the corresponding video element and restores its position with{" "}
-              <code className="text-sm bg-gray-200 dark:bg-gray-800 px-1.5 py-0.5 rounded text-gray-900 dark:text-gray-100 font-mono">
-                scrollIntoView
-              </code>
-              .
-            </p>
-            <p>
-              The saved-video modal uses a similar strategy: it receives the
-              selected thumbnail index, scrolls to that item on opening, and
-              mounts only the selected video and its neighbours.
-            </p>
-          </div>
-
-          <div className="mt-12 rounded-2xl border border-cyan-500/20 bg-white p-8 dark:bg-gray-950 dark:border-gray-800 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[.18em] text-cyan-800 dark:text-cyan-300 mb-2">
-              Debugging Case · Hydration & Order of Execution
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              On a hard refresh, the API could return valid data while the first
-              feed still appeared empty. Navigating away and back made the
-              videos appear, which suggested that the failure was caused by
-              rendering order rather than the network request.
+          <div className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="mb-8">
+              The application is separated into components based on their
+              responsibilities:
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                [
-                  "Signal",
-                  "Successful network response, empty initial feed and correct rendering after a later navigation.",
-                ],
-                [
-                  "Root Cause",
-                  "The persisted active index could rehydrate before the initial paginated dataset and corresponding DOM structure were ready. The render-window calculation then focused on a later index while the first visible items were replaced with placeholders.",
-                ],
-                [
-                  "Resolution",
-                  "I kept the first feed item renderable as a defensive fallback and delayed scroll restoration until video data was available. For saved-video UI, I added an explicit hydration flag through Zustand’s onRehydrateStorage callback and avoided rendering persisted collections before rehydration completed.",
-                ],
-              ].map(([title, copy]) => (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {components.map((comp) => (
                 <div
-                  key={title}
-                  className="rounded-xl border border-gray-200 bg-gray-50/50 p-5 dark:border-gray-800 dark:bg-gray-900/50"
+                  key={comp.name}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
                 >
-                  <h5 className="font-semibold text-cyan-800 dark:text-cyan-300 text-sm">
-                    {title}
-                  </h5>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    {copy}
-                  </p>
+                  <span className="font-mono text-sm font-semibold text-cyan-700 dark:text-cyan-400">
+                    {comp.name}
+                  </span>
+                  <span className="text-sm text-gray-500">—</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {comp.desc}
+                  </span>
                 </div>
               ))}
             </div>
-
-            <div className="mt-6 border-t border-gray-100 dark:border-gray-800/60 pt-4">
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                <span className="font-semibold text-gray-700 dark:text-gray-300">
-                  What I learned: &nbsp;
-                </span>
-                Persisted client state adds another lifecycle to the
-                application. A value can be valid in storage but temporarily
-                inconsistent with data and DOM elements that have not loaded
-                yet.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <p className="case-label">05 · Saved-video Workflow</p>
-          <div className="mt-6 max-w-4xl text-muted-foreground leading-relaxed text-base space-y-4">
-            <p>
-              Bookmarked videos are persisted in Zustand and displayed in a
-              profile grid. Users can open a saved item directly in a vertical
-              playback modal, enter selection mode and remove multiple items in
-              one operation. Selection state remains local to the profile page,
-              while the updated saved collection is written back to the shared
-              store.
+      <section className="px-6 py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        <div className="mx-auto max-w-4xl gap-12">
+          <div>
+            <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase mb-8">
+              05 · Insights
             </p>
-            <p className="text-sm bg-gray-50 dark:bg-gray-900 border-l-2 border-cyan-600 dark:border-cyan-400 p-3 rounded-r-lg">
-              <strong className="text-gray-900 dark:text-gray-200 font-medium">
-                Design Decision:
-              </strong>{" "}
-              The delete action owns the mutation rather than individual
-              selection controls, keeping selection temporary until the user
-              confirms the operation.
+            <p className="space-y-5 text-gray-600 dark:text-gray-400">
+              This project highlighted how several frontend concerns affect each
+              other. Optimising a long list is not only about removing
+              components—it also requires keeping the page position stable.
+              Restoring a previous position is not only a state problem—it also
+              depends on whether the required data has finished loading.
+              Persisted state also needs special handling when it is used in a
+              server-rendered application.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-gray-50 px-6 py-20 dark:bg-gray-900">
-        <div className="mx-auto max-w-6xl">
-          <p className="case-label">06 · Trade-offs and Limitations</p>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2 text-sm text-muted-foreground">
-            {tradeoffs.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-950"
-              >
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-cyan-600" />
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </CaseStudyLayout>
