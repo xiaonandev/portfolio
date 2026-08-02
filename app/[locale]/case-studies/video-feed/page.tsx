@@ -1,14 +1,5 @@
 import CaseStudyLayout from "@/components/CaseStudy/CaseStudyLayout";
 
-const overview = [
-  ["Role", "Design and frontend development"],
-  ["Type", "Independent project"],
-  ["Duration", "July 2026 – Present"],
-  ["Stack", "Next.js, TypeScript, SWR, Zustand"],
-  ["Data", "Pexels API"],
-  ["Focus", "Media lifecycle, rendering, persistent state"],
-];
-
 const challenges = [
   "Rendering every item creates unnecessary DOM and resource usage.",
   "The application must detect which item is currently active.",
@@ -97,33 +88,10 @@ export default async function VideoFeedCaseStudy({
       demo="https://video-feed-three.vercel.app/"
       github="https://github.com/xiaonandev/video-feed"
     >
-      <section className="px-6 py-12 lg:py-20">
-        <div className="mx-auto max-w-4xl">
-          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            01 · Overview
-          </p>
-          <div className="mt-8 grid overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-3">
-            {overview.map(([label, value]) => (
-              <div
-                key={label}
-                className="border-b border-gray-200 p-6 last:border-b-0 dark:border-gray-800 sm:border-r"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                  {label}
-                </p>
-                <p className="mt-2 font-medium text-gray-900 dark:text-gray-100">
-                  {value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
         <div className="mx-auto max-w-4xl">
           <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            02 · The Challenge
+            01 · The Challenge
           </p>
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
             <p>
@@ -150,7 +118,7 @@ export default async function VideoFeedCaseStudy({
       <section className="px-6 py-16 lg:py-24">
         <div className="mx-auto max-w-4xl">
           <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            03 · Key Technical Decisions
+            02 · Key Technical Decisions
           </p>
 
           <div className="mt-12 space-y-16">
@@ -187,7 +155,7 @@ export default async function VideoFeedCaseStudy({
       <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
         <div className="mx-auto max-w-4xl">
           <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            04 · Reusable Component Design
+            03 · Reusable Component Design
           </p>
           <div className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
             <p className="mb-8">
@@ -219,7 +187,7 @@ export default async function VideoFeedCaseStudy({
         <div className="mx-auto max-w-4xl gap-12">
           <div>
             <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase mb-8">
-              05 · Insights
+              04 · Insights
             </p>
             <p className="space-y-5 text-gray-600 dark:text-gray-400">
               This project highlighted how several frontend concerns affect each

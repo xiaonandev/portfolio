@@ -55,11 +55,11 @@
       },
       {
         "title": "Job Board Platform",
-        "eyebrow": "Full-stack product",
-        "description": "An authenticated job portal connecting job-seeker and employer workflows to relational data.",
+        "eyebrow": "Data-driven web application",
+        "description": "A responsive job discovery interface with URL-driven search, multi-criteria filtering, and server-side pagination.",
         "highlights": [
-          "Authenticated job-seeker and employer workflows",
-          "Type-safe relational data with Prisma and PostgreSQL"
+          "Search and filter state synchronized through URL parameters for shareable, refresh-safe views",
+          "Server-side filtering and pagination with responsive result navigation"
         ]
       },
       {

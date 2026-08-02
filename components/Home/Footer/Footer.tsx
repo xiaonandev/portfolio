@@ -5,8 +5,10 @@ const Footer = () => {
   return (
     <footer className="border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 py-12">
       <div className="w-[80%] mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="text-xl font-bold text-cyan-600">{"</>"}</span>
+        <div className="grid items-center justify-items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
+          <span className="text-xl font-bold text-cyan-600 md:justify-self-start">
+            {"</>"}
+          </span>
           <div className="flex items-center gap-4">
             {footerSocialLinks.map((link) => (
               <a
@@ -20,11 +22,11 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
+          <p className="text-sm text-muted-foreground flex items-center gap-1 md:justify-self-end">
             Made by Xiaonan Dong
           </p>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-3000 dark:border-gray-800 text-center">
+        <div className="mt-8 border-t border-gray-300 pt-8 text-center dark:border-gray-800">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} All rights reserved
           </p>

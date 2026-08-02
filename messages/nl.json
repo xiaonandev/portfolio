@@ -60,17 +60,12 @@
       },
       {
         "title": "Vacatureplatform",
-        "eyebrow": "Full-stack product",
-        "description": "Een vacatureportal die flows voor werkzoekenden en werkgevers koppelt aan relationele data.",
+        "eyebrow": "Datagestuurde webapplicatie",
+        "description": "Een responsieve interface voor het zoeken naar vacatures met URL-gestuurde zoekopdrachten, multicriteriumfiltering en server-side paginering.",
         "highlights": [
-          "Geauthenticeerde flows voor werkzoekenden en werkgevers",
-          "Typeveilige relationele data met Prisma en PostgreSQL"
-        ],
-        "caseStudy": {
-          "challenge": "Verschillende gebruikersrollen in één product ondersteunen met begrijpelijke beveiligde acties en datarelaties.",
-          "approach": "Authenticatie gebouwd met Auth.js, vacatures en gebruikers gemodelleerd in Prisma en herbruikbare formulieren gekoppeld aan serverdata.",
-          "outcome": "Een end-to-end product dat frontend, authenticatie en databaseontwerp laat zien."
-        }
+          "Zoek- en filterstatus gesynchroniseerd via URL-parameters voor deelbare en vernieuwingsveilige weergaven",
+          "Server-side filtering en paginering met responsieve resultaatnavigatie"
+        ]
       },
       {
         "title": "Muziek App",

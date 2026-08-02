@@ -36,7 +36,7 @@ export const projects = [
       "PostgreSQL",
       "Tailwind",
     ],
-    demoUrl: "https://job-board-pmt3q38eb-xiaonandevs-projects.vercel.app/",
+    demoUrl: "https://job-board-ruddy-delta.vercel.app/",
     githubUrl: "https://github.com/xiaonandev/job-board",
     eyebrow: "Full-stack practice",
     highlights: [

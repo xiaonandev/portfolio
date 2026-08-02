@@ -35,12 +35,14 @@ const Nav = ({ openNav }: Props) => {
         shadow-md
       "
     >
-      <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
-        <Logo />
+      <div className="mx-auto grid h-full w-[90%] grid-cols-[1fr_auto] items-center xl:w-[80%] lg:grid-cols-[1fr_auto_1fr]">
+        <div className="justify-self-start">
+          <Logo />
+        </div>
         <div className="hidden lg:flex items-center space-x-10">
           {navItemList}
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 justify-self-end">
           <ThemeToggler />
           <LanguageSwitcher />
           <MenuIcon
