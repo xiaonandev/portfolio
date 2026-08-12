@@ -1,10 +1,10 @@
 {
   "Hero": {
-    "availability": "Open to frontend opportunities",
-    "role": "Frontend Developer · React · TypeScript",
+    "availability": "Open to full-stack and frontend opportunities",
+    "role": "Full-stack Developer · Frontend Focus",
     "greeting": "I’m Xiaonan",
-    "headline": " Frontend Developer",
-    "description": "React & TypeScript developer with commercial experience building media workflows, cross-platform interfaces, and internal administration tools.",
+    "headline": " Full-stack Developer with a frontend focus",
+    "description": "React and TypeScript developer with commercial frontend experience and hands-on experience building full-stack applications with Next.js, Prisma and PostgreSQL. I carry features from responsive interfaces through API validation, relational data and deployment.",
     "viewProjects": "View projects",
     "downloadCv": "Download CV",
     "location": "Based in the Netherlands",
@@ -14,7 +14,7 @@
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer who enjoys building interactive web experiences. \n\nMy main tools are React and TypeScript. I like turning UI designs into working applications, managing complex states, and paying attention to the small details that make interfaces feel smooth and intuitive. \n\nI also enjoy understanding the bigger picture, so I’ve been exploring how frontend applications connect with backend systems using tools like Prisma and PostgreSQL. \n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m always looking to build meaningful products. ",
+    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a full-stack developer with a frontend focus. My strongest tools are React and TypeScript, and I enjoy turning UI designs into responsive applications with clear state and polished interactions.\n\nI also build features across Next.js route handlers, runtime validation, authentication and relational data using Prisma and PostgreSQL. This allows me to follow a feature from the interface through its API and database behaviour.\n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m looking for junior full-stack and frontend opportunities where I can contribute across the product while continuing to deepen my backend experience.",
     "beyondLink": "Beyond coding: music, art and a little more about me"
   },
   "Skills": {
@@ -43,6 +43,15 @@
     },
     "items": [
       {
+        "title": "Workspace Booking Dashboard",
+        "eyebrow": "Booking and data",
+        "description": "A full-stack dashboard featuring booking management, with server-side filtering, conflict prevention and database-driven reporting.",
+        "highlights": [
+          "Prevents conflicts when bookings are created or restored",
+          "Turns relational data into meaningful dashboard metrics"
+        ]
+      },
+      {
         "title": "Video Feed",
         "eyebrow": "Interaction & performance",
         "description": "An content feed focused on viewport-aware rendering, incremental data loading, persistent user state, and navigation-context restoration.",
@@ -60,15 +69,6 @@
         "highlights": [
           "Search and filter state synchronized through URL parameters for shareable, refresh-safe views",
           "Server-side filtering and pagination with responsive result navigation"
-        ]
-      },
-      {
-        "title": "Music App",
-        "eyebrow": "State architecture",
-        "description": "A web music player with synchronized playback, queue and playlist controls across the interface.",
-        "highlights": [
-          "One synchronized audio engine across the application",
-          "Queue, playlist and playback state designed as reusable actions"
         ]
       }
     ]

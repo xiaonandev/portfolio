@@ -10,14 +10,6 @@ const projects = {
     demo: "https://job-board-pmt3q38eb-xiaonandevs-projects.vercel.app/",
     github: "https://github.com/xiaonandev/job-board",
   },
-  "music-app": {
-    title: "Music App",
-    description:
-      "A frontend practice project for audio playback, queues, playlists and shared state.",
-    image: "/images/music-app-01.png",
-    demo: "https://music-app-nu-liard.vercel.app/",
-    github: "https://github.com/xiaonandev/music-app",
-  },
 } as const;
 
 export default async function EmptyCaseStudy({

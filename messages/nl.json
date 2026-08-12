@@ -1,10 +1,10 @@
 {
   "Hero": {
-    "availability": "Beschikbaar voor frontendfuncties",
-    "role": "Frontend Developer · React · TypeScript",
+    "availability": "Beschikbaar voor full-stack- en frontendfuncties",
+    "role": "Full-stack developer · Frontendfocus",
     "greeting": "I’m Xiaonan",
-    "headline": " Frontend Developer",
-    "description": "React en TypeScript-developer met commerciële ervaring in mediaworkflows, cross-platform interfaces en interne beheertools.",
+    "headline": " Full-stack developer met een frontendfocus",
+    "description": "React- en TypeScript-developer met commerciële frontendervaring en praktische ervaring met full-stack applicaties in Next.js, Prisma en PostgreSQL. Ik werk aan complete features, van responsieve interfaces tot API-validatie, relationele data en deployment.",
     "viewProjects": "Bekijk geselecteerd werk",
     "downloadCv": "Download CV",
     "location": "Woonachtig in Nederland",
@@ -14,7 +14,7 @@
   "About": {
     "title1": "Over",
     "title2": "Mij",
-    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een frontend developer die graag interactieve en gepolijste webervaringen bouwt.\n\nMijn belangrijkste tools zijn React en TypeScript. Ik vind het leuk om UI-ontwerpen om te zetten in werkende applicaties, complexe state management op te lossen en aandacht te besteden aan de kleine details die interfaces soepel en intuïtief maken.\n\nIk vind het ook interessant om het grotere geheel te begrijpen, daarom verdiep ik me in hoe frontend-applicaties verbinding maken met backend-systemen met behulp van tools zoals Prisma en PostgreSQL.\n\nIn mijn vorige frontendrol werkte ik samen met ontwerpers, backend engineers en een mobiel team. Ik blijf graag leren en betekenisvolle producten bouwen. ",
+    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een full-stack developer met een frontendfocus. Mijn sterkste tools zijn React en TypeScript. Ik zet graag UI-ontwerpen om in responsieve applicaties met duidelijke state en verzorgde interacties.\n\nDaarnaast bouw ik features met Next.js route handlers, runtimevalidatie, authenticatie en relationele data via Prisma en PostgreSQL. Zo kan ik een feature volgen van de interface tot het gedrag van de API en database.\n\nIn mijn vorige frontendrol werkte ik samen met ontwerpers, backend engineers en een mobiel team. Ik zoek een junior full-stack- of frontendfunctie waarin ik over het hele product kan bijdragen en mijn backendkennis verder kan verdiepen.",
     "beyondLink": "Beyond coding: muziek, kunst en iets meer over mij"
   },
   "Skills": {
@@ -42,6 +42,15 @@
     },
     "items": [
       {
+        "title": "Werkplekreserveringsdashboard",
+        "eyebrow": "Reserveringen & data",
+        "description": "Een beheerdashboard voor gedeelde werkplekken en reserveringen, met conflictpreventie, runtimevalidatie en datagestuurde rapportage.",
+        "highlights": [
+          "Voorkomt conflicten bij het maken of herstellen van reserveringen",
+          "Zet relationele data om in betekenisvolle dashboardstatistieken"
+        ]
+      },
+      {
         "title": "Video Feed",
         "eyebrow": "Interactie & performance",
 
@@ -66,20 +75,6 @@
           "Zoek- en filterstatus gesynchroniseerd via URL-parameters voor deelbare en vernieuwingsveilige weergaven",
           "Server-side filtering en paginering met responsieve resultaatnavigatie"
         ]
-      },
-      {
-        "title": "Muziek App",
-        "eyebrow": "State-architectuur",
-        "description": "Een webmuziekspeler met gesynchroniseerde afspeel-, wachtrij- en playlistbediening.",
-        "highlights": [
-          "Eén gesynchroniseerde audio-engine voor de hele applicatie",
-          "Wachtrij-, playlist- en afspeelstate als herbruikbare acties"
-        ],
-        "caseStudy": {
-          "challenge": "Playback, actieve track, bediening en playlists over meerdere delen van de interface synchroniseren.",
-          "approach": "Een centrale Zustand-audiostore en herbruikbare playercontrols ontworpen en externe muziekdata gekoppeld via een consistente API-laag.",
-          "outcome": "Een samenhangende speler waarin navigatie en playlistwijzigingen de playback niet onderbreken."
-        }
       }
     ]
   },

@@ -2,6 +2,35 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const projects = [
   {
+    title: "Workspace Booking Dashboard",
+    description:
+      "An admin dashboard for managing shared workspaces and bookings, with conflict prevention, runtime validation and database-driven reporting.",
+    image: "/images/workspace-dashboard-02.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Zod",
+      "Recharts",
+    ],
+    demoUrl: "https://workspace-dashboard-rho.vercel.app/",
+    githubUrl: "https://github.com/xiaonandev/workspace-dashboard",
+    eyebrow: "Booking and data",
+    highlights: [
+      "Prevents conflicts when bookings are created or restored",
+      "Turns relational data into meaningful dashboard metrics",
+    ],
+    caseStudy: {
+      challenge:
+        "Keep booking state consistent across forms, API validation, database relations and status changes.",
+      approach:
+        "Separated server data from client interaction, validated requests with Zod and applied conflict rules before Prisma writes.",
+      outcome:
+        "A responsive admin workflow with reliable booking actions and reporting based on real PostgreSQL data.",
+    },
+  },
+  {
     title: "Short-Video Platform",
     description:
       "A video browsing app with a vertical swipe feed, auto-playing video player, and global volume control. Supports video bookmarking with local persistence and a profile gallery to replay saved videos.",
@@ -31,7 +60,6 @@ export const projects = [
     techStack: [
       "Next.js",
       "TypeScript",
-      "Auth.js",
       "Prisma ORM",
       "PostgreSQL",
       "Tailwind",
@@ -52,34 +80,34 @@ export const projects = [
         "An end-to-end product that demonstrates frontend delivery alongside authentication, database design and deployment.",
     },
   },
-  {
-    title: "Music App",
-    description:
-      "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine.",
-    image: "/images/music-app-01.png",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Zustand",
-      "API integration",
-      "Tailwind",
-    ],
-    demoUrl: "https://music-app-nu-liard.vercel.app/",
-    githubUrl: "https://github.com/xiaonandev/music-app",
-    eyebrow: "Audio and state",
-    highlights: [
-      "One audio player shared across the app",
-      "Queue, playlist and playback state managed with Zustand",
-    ],
-    caseStudy: {
-      challenge:
-        "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
-      approach:
-        "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
-      outcome:
-        "A cohesive player experience where navigation and playlist edits do not interrupt or desynchronize playback.",
-    },
-  },
+  // {
+  //   title: "Music App",
+  //   description:
+  //     "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine.",
+  //   image: "/images/music-app-01.png",
+  //   techStack: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "Zustand",
+  //     "API integration",
+  //     "Tailwind",
+  //   ],
+  //   demoUrl: "https://music-app-nu-liard.vercel.app/",
+  //   githubUrl: "https://github.com/xiaonandev/music-app",
+  //   eyebrow: "Audio and state",
+  //   highlights: [
+  //     "One audio player shared across the app",
+  //     "Queue, playlist and playback state managed with Zustand",
+  //   ],
+  //   caseStudy: {
+  //     challenge:
+  //       "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
+  //     approach:
+  //       "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
+  //     outcome:
+  //       "A cohesive player experience where navigation and playlist edits do not interrupt or desynchronize playback.",
+  //   },
+  // },
   // {
   //   title: "Movies App",
   //   description:

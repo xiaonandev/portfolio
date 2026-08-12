@@ -13,13 +13,13 @@ const Skills = () => {
     {
       title: t("groups.frontend"),
       highlight: true,
-      skills: ["Zustand", "REST API", "HTML5", "CSS3"],
+      skills: ["Zustand", "HTML5", "CSS3"],
     },
-    // {
-    //   title: t('groups.backend'),
-    //   highlight: true,
-    //   skills: ['Next.js', 'Prisma', 'PostgreSQL', 'Supabase'],
-    // },
+    {
+      title: t("groups.backend"),
+      highlight: true,
+      skills: ["Prisma ORM", "PostgreSQL", "Zod", "REST APIs"],
+    },
     {
       title: t("groups.styling"),
       highlight: false,

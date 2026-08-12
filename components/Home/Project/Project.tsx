@@ -23,6 +23,7 @@ const Project = () => {
     eyebrow: projectTranslations[index]?.eyebrow || p.eyebrow,
     caseStudy: projectTranslations[index]?.caseStudy || p.caseStudy,
   }));
+  const caseStudySlugs = ["workspace-dashboard", "video-feed", "job-board"];
 
   return (
     <div className="py-5 bg-gray-100 dark:bg-gray-900">
@@ -47,7 +48,7 @@ const Project = () => {
                 demo: t("labels.demo"),
                 code: t("labels.code"),
               }}
-              caseStudyUrl={`/${locale}/case-studies/${["video-feed", "job-board", "music-app"][index]}`}
+              caseStudyUrl={`/${locale}/case-studies/${caseStudySlugs[index]}`}
             />
           ))}
         </div>

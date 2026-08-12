@@ -6,7 +6,7 @@ import Link from "next/link";
 type Props = {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   techStack: string[];
   demoUrl: string;
   githubUrl: string;
@@ -38,7 +38,7 @@ const ProjectCard = ({
 }: Props) => {
   return (
     <div className="group relative bg-white dark:bg-gray-900 shadow-sm hover:shadow-md rounded-2xl overflow-hidden flex flex-col h-full border border-gray-200/80 dark:border-gray-800 transition-all duration-300 focus-within:ring-2 focus-within:ring-cyan-600 focus-within:ring-offset-2 dark:focus-within:ring-cyan-400 dark:focus-within:ring-offset-gray-950">
-      {caseStudyUrl && (
+      {caseStudyUrl && image && (
         <Link
           href={caseStudyUrl}
           aria-label={`Read ${title} case study`}
@@ -55,7 +55,7 @@ const ProjectCard = ({
           </div>
         </Link>
       )}
-      {!caseStudyUrl && (
+      {!caseStudyUrl && image && (
         <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-800">
           <Image
             src={image}
@@ -65,6 +65,17 @@ const ProjectCard = ({
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
+      )}
+      {!image && (
+        <Link
+          href={caseStudyUrl || "#"}
+          aria-label={`Read ${title} case study`}
+          className="flex h-48 items-center justify-center bg-gray-100 px-8 text-center dark:bg-gray-800"
+        >
+          <span className="text-xl font-semibold tracking-tight text-gray-700 dark:text-gray-200">
+            Workspace Booking
+          </span>
+        </Link>
       )}
 
       <div className="p-6 flex flex-col flex-1">

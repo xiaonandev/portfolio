@@ -1,74 +1,36 @@
 import CaseStudyLayout from "@/components/CaseStudy/CaseStudyLayout";
 
 const challenges = [
-  "Rendering every item creates unnecessary DOM and resource usage.",
-  "The application must detect which item is currently active.",
-  "More data needs to load before the user reaches the end.",
-  "Saved data must remain consistent across the feed and profile views.",
-  "Returning to the feed should preserve the user’s previous position.",
-  "Persisted client state must not cause incorrect UI during hydration.",
+  "Avoid mounting an interactive player for every item in the feed.",
+  "Load more content before the user reaches the end.",
+  "Keep saved items and playback preferences across routes and refreshes.",
+  "Restore the previous feed position even when its data is not loaded yet.",
 ];
 
-const implementations = [
+const decisions = [
   {
     number: "01",
-    title: "Rendering Only the Relevant Items",
+    title: "Rendering a small window around the active video",
     problem:
-      "Mounting every content item at once would create unnecessary browser work, especially because each item contains an interactive player and its own event handling.",
+      "Mounting every video would create unnecessary DOM, media and event-handling work as the feed grows.",
     approach:
-      "Instead of keeping every video component mounted, the feed renders only the current item and the items directly before and after it. Items farther away are replaced with empty placeholders of the same size. This keeps the scroll position stable while reducing the number of active components on the page. I used CSS scroll snap to create a predictable vertical browsing experience and IntersectionObserver to detect which item is currently visible.",
+      "The feed mounts only the active item and its immediate neighbours. Items farther away become same-size placeholders, keeping the scroll geometry stable while reducing active players. CSS scroll snap creates the vertical browsing behaviour, and IntersectionObserver identifies the active item.",
   },
   {
     number: "02",
-    title: "Loading More Data as the User Browses",
+    title: "Loading the next page before it is needed",
     problem:
-      "Loading all available data upfront would increase the initial request and rendering cost. Loading only after reaching the exact end could instead leave the user waiting.",
+      "Loading everything upfront would increase the initial request, while waiting for the exact end of the feed could interrupt browsing.",
     approach:
-      "I used useSWRInfinite to manage paginated requests and flattened the returned pages into one list with useMemo. When the user gets close to the end of the loaded items, the application requests the next page in advance.",
+      "useSWRInfinite manages paginated requests and the returned pages are flattened into one list. When the active item approaches the end of the loaded data, the next page is requested in advance.",
   },
   {
     number: "03",
-    title: "Managing State Across Different Views",
+    title: "Preserving state and restoring context",
     problem:
-      "The application uses different types of state for different purposes. Putting all of them in one global store would make unrelated components dependent on each other and make temporary UI state persist longer than intended.",
+      "Saved items, playback preferences and the previous feed position need to survive navigation, but temporary UI state should not become global. Restoring an index is also not enough if the corresponding page of data has not loaded yet.",
     approach:
-      "I use Zustand to store information that needs to be shared or preserved, including saved items and the previous feed position. And temporary interface state—such as selected items, an open modal —remains inside the page or component where it is used. This prevents short-lived interface state from unnecessarily becoming global.",
-  },
-  {
-    number: "04",
-    title: "Preserving User Context Across Views",
-    problem:
-      "When users open their saved collection and return to the main feed, returning to the beginning would lose their browsing context.",
-    approach:
-      "The feed stores the active index and reuses it after navigation. If the restored index is beyond the currently loaded dataset, its proximity to the end causes additional pages to load. Once the target item becomes available, the feed scrolls it back into view.",
-  },
-  {
-    number: "05",
-    title: "Handling Persisted State During Hydration",
-    problem:
-      "Saved-items view is stored in the browser so that it remains available after a refresh. However, zustand persistence is restored only after the application loads in the browser. Rendering Saved-items view before that process finishes can temporarily produce an incorrect empty state.",
-    approach:
-      "I added a hydration status to the store and delay the saved-items view until the restoration process is complete. This keeps the first visible state consistent with the stored data.",
-  },
-];
-
-const components = [
-  {
-    name: "FeedContainer",
-    desc: "pagination, active position and render window",
-  },
-  {
-    name: "VideoCard",
-    desc: "combines the content, controls and overlay for one item",
-  },
-  { name: "VideoPlayer", desc: "handles the item’s direct interactions" },
-  {
-    name: "SavedVideoGrid",
-    desc: "displays the saved collection and supports selection",
-  },
-  {
-    name: "SavedVideosModal",
-    desc: "reuses the feed experience inside the saved-items view",
+      "Zustand stores only shared or persistent values, while modal and selection state remains local. When users return to the feed, the stored index can trigger additional pagination until the target item exists, after which it scrolls into view. A hydration flag delays persisted views until browser storage has been restored, avoiding an incorrect empty state on first render.",
   },
 ];
 
@@ -83,122 +45,78 @@ export default async function VideoFeedCaseStudy({
     <CaseStudyLayout
       locale={locale}
       title="Video Feed"
-      description="A browsing application built to explore common frontend challenges found in interaction-heavy products: rendering long lists efficiently, loading data incrementally, preserving user state across routes, and restoring context when users return to a previous view."
+      description="A browsing application focused on viewport-aware rendering, incremental loading and preserving user context across routes."
       image="/images/video-feed.png"
       demo="https://video-feed-three.vercel.app/"
       github="https://github.com/xiaonandev/video-feed"
     >
-      <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
+      <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50 lg:py-20">
         <div className="mx-auto max-w-4xl">
-          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            01 · The Challenge
+          <p className="case-label">01 · The Challenge</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white">
+            Coordinating performance, loading and persistent state
+          </h2>
+          <p className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            A continuously scrolling media feed connects several concerns that
+            are easy to treat separately:
           </p>
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-            <p>
-              A continuously scrolling feed introduces several connected
-              problems:
-            </p>
-            <ul className="grid gap-4 md:grid-cols-2 text-base">
-              {challenges.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-600" />
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="pt-4 border-t border-gray-200 dark:border-gray-800">
-              The main challenge was coordinating these behaviours without
-              turning every piece of state into global state or tightly coupling
-              the feed to individual content cards.
-            </p>
-          </div>
+          <ul className="mt-8 grid gap-x-10 gap-y-4 md:grid-cols-2">
+            {challenges.map((challenge) => (
+              <li
+                key={challenge}
+                className="flex gap-3 leading-relaxed text-gray-600 dark:text-gray-400"
+              >
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-700 dark:bg-cyan-400" />
+                {challenge}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       <section className="px-6 py-16 lg:py-24">
         <div className="mx-auto max-w-4xl">
-          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            02 · Key Technical Decisions
-          </p>
-
+          <p className="case-label">02 · Key Technical Decisions</p>
           <div className="mt-12 space-y-16">
-            {implementations.map((impl) => (
-              <article key={impl.number} className="relative">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-50 mb-8 flex items-baseline gap-3">
-                  <span className="font-mono text-cyan-600 dark:text-cyan-400 text-xl">
-                    {impl.number}
+            {decisions.map((decision) => (
+              <article key={decision.number}>
+                <h3 className="flex items-baseline gap-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+                  <span className="font-mono text-xl text-cyan-700 dark:text-cyan-400">
+                    {decision.number}
                   </span>
-                  {impl.title}
+                  {decision.title}
                 </h3>
-
-                <div className="grid gap-6 sm:grid-cols-[120px_1fr] items-start text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                  <div className="font-semibold text-gray-900 dark:text-gray-200 text-sm uppercase tracking-wider pt-1">
+                <div className="mt-8 grid items-start gap-6 text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:grid-cols-[120px_1fr]">
+                  <p className="pt-1 text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-200">
                     Problem
-                  </div>
-                  <div className="whitespace-pre-line">{impl.problem}</div>
-
-                  <div className="font-semibold text-gray-900 dark:text-gray-200 text-sm uppercase tracking-wider pt-1">
+                  </p>
+                  <p>{decision.problem}</p>
+                  <p className="pt-1 text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-200">
                     Approach
-                  </div>
-                  <div className="space-y-4">
-                    <div className="whitespace-pre-line">{impl.approach}</div>
-                  </div>
+                  </p>
+                  <p>{decision.approach}</p>
                 </div>
-
-                <div className="mt-16 h-px w-full bg-gray-100 dark:bg-gray-800/60 block last:hidden" />
+                <div className="mt-16 h-px bg-gray-100 dark:bg-gray-800/60" />
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900/50">
+      <section className="border-y border-gray-200 bg-gray-50 px-6 py-16 dark:border-gray-800 dark:bg-gray-900/50 lg:py-20">
         <div className="mx-auto max-w-4xl">
-          <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase">
-            03 · Reusable Component Design
+          <p className="case-label">03 · Insight</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white">
+            The concerns depend on each other
+          </h2>
+          <p className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            Optimising the mounted items also requires preserving scroll
+            geometry. Restoring a position depends on whether the required data
+            exists. Persisting state requires waiting for hydration before
+            showing the correct browser-owned values. The project helped me see
+            these as one connected browsing experience rather than isolated
+            performance and state-management tasks.
           </p>
-          <div className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-            <p className="mb-8">
-              The application is separated into components based on their
-              responsibilities:
-            </p>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {components.map((comp) => (
-                <div
-                  key={comp.name}
-                  className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
-                >
-                  <span className="font-mono text-sm font-semibold text-cyan-700 dark:text-cyan-400">
-                    {comp.name}
-                  </span>
-                  <span className="text-sm text-gray-500">—</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    {comp.desc}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-        <div className="mx-auto max-w-4xl gap-12">
-          <div>
-            <p className="case-label text-sm font-semibold tracking-widest text-cyan-700 uppercase mb-8">
-              04 · Insights
-            </p>
-            <p className="space-y-5 text-gray-600 dark:text-gray-400">
-              This project highlighted how several frontend concerns affect each
-              other. Optimising a long list is not only about removing
-              components—it also requires keeping the page position stable.
-              Restoring a previous position is not only a state problem—it also
-              depends on whether the required data has finished loading.
-              Persisted state also needs special handling when it is used in a
-              server-rendered application.
-            </p>
-          </div>
         </div>
       </section>
     </CaseStudyLayout>
