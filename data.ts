@@ -80,34 +80,22 @@ export const projects = [
         "An end-to-end product that demonstrates frontend delivery alongside authentication, database design and deployment.",
     },
   },
-  // {
-  //   title: "Music App",
-  //   description:
-  //     "A modern web-based music player featuring real-time playback synchronization, dynamic playlist management, and a robust global state-driven audio engine.",
-  //   image: "/images/music-app-01.png",
-  //   techStack: [
-  //     "Next.js",
-  //     "TypeScript",
-  //     "Zustand",
-  //     "API integration",
-  //     "Tailwind",
-  //   ],
-  //   demoUrl: "https://music-app-nu-liard.vercel.app/",
-  //   githubUrl: "https://github.com/xiaonandev/music-app",
-  //   eyebrow: "Audio and state",
-  //   highlights: [
-  //     "One audio player shared across the app",
-  //     "Queue, playlist and playback state managed with Zustand",
-  //   ],
-  //   caseStudy: {
-  //     challenge:
-  //       "Keep playback, the active track, controls and playlists synchronized across multiple parts of the interface.",
-  //     approach:
-  //       "Designed a centralized Zustand audio store and reusable player controls, then connected remote music data through a consistent API layer.",
-  //     outcome:
-  //       "A cohesive player experience where navigation and playlist edits do not interrupt or desynchronize playback.",
-  //   },
-  // },
+  {
+    title: "Music App",
+    description:
+      "A web music player with synchronized playback, queue and playlist controls across the interface.",
+    image: "/images/music-app.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "API integration",
+      "Tailwind",
+    ],
+    demoUrl: "https://music-app-nu-liard.vercel.app/",
+    githubUrl: "https://github.com/xiaonandev/music-app",
+    eyebrow: "Audio and state",
+  },
   // {
   //   title: "Movies App",
   //   description:

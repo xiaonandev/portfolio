@@ -2,6 +2,7 @@ import SectionHeading from "@/components/Helper/SectionHeading";
 import React from "react";
 import { projects } from "../../../data";
 import ProjectCard from "./ProjectCard";
+import MoreWorkCard from "./MoreWorkCard";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 const Project = () => {
@@ -23,7 +24,9 @@ const Project = () => {
     eyebrow: projectTranslations[index]?.eyebrow || p.eyebrow,
     caseStudy: projectTranslations[index]?.caseStudy || p.caseStudy,
   }));
-  const caseStudySlugs = ["workspace-dashboard", "video-feed", "job-board"];
+  const featuredProjects = projectList.slice(0, 2);
+  const moreWorks = projectList.slice(2);
+  const caseStudySlugs = ["workspace-dashboard", "video-feed"];
 
   return (
     <div className="py-5 bg-gray-100 dark:bg-gray-900">
@@ -34,10 +37,10 @@ const Project = () => {
           description=""
         />
 
-        <div className="grid gap-7 w-[88%] max-w-6xl mx-auto lg:grid-cols-3">
-          {projectList.map((project, index) => (
+        <div className="mx-auto grid w-[88%] max-w-6xl gap-7 lg:grid-cols-3">
+          {featuredProjects.map((project, index) => (
             <ProjectCard
-              key={index}
+              key={project.title}
               {...project}
               labels={{
                 highlights: t("labels.highlights"),
@@ -51,6 +54,33 @@ const Project = () => {
               caseStudyUrl={`/${locale}/case-studies/${caseStudySlugs[index]}`}
             />
           ))}
+
+          <div className="flex min-h-96 items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white/40 px-8 text-center dark:border-gray-700 dark:bg-gray-950/30">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[.16em] text-cyan-700 dark:text-cyan-400">
+                {t("comingSoon")}
+              </p>
+              <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                {t("placeholder")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 w-[88%] max-w-6xl">
+          <h3 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
+            {t("moreWorks")}
+          </h3>
+          <div className="space-y-1">
+            {moreWorks.map((project) => (
+              <MoreWorkCard
+                key={project.title}
+                title={project.title}
+                techStack={project.techStack}
+                demoUrl={project.demoUrl}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </div>

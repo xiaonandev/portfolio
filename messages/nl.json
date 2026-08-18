@@ -31,6 +31,10 @@
   "Projects": {
     "title1": "Uitgelichte",
     "title2": "Projecten",
+    "moreWorks": "Meer werk",
+    "close": "Sluiten",
+    "comingSoon": "Binnenkort",
+    "placeholder": "Ruimte gereserveerd voor het volgende uitgelichte project.",
     "labels": {
       "highlights": "Kernpunten",
       "caseStudy": "Lees case",
@@ -75,6 +79,11 @@
           "Zoek- en filterstatus gesynchroniseerd via URL-parameters voor deelbare en vernieuwingsveilige weergaven",
           "Server-side filtering en paginering met responsieve resultaatnavigatie"
         ]
+      },
+      {
+        "title": "Muziek App",
+        "eyebrow": "Audio en state",
+        "description": "Een webmuziekspeler met gesynchroniseerde afspeel-, wachtrij- en playlistbediening."
       }
     ]
   },

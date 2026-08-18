@@ -32,6 +32,10 @@
   "Projects": {
     "title1": "Featured",
     "title2": "Projects",
+    "moreWorks": "More works",
+    "close": "Close",
+    "comingSoon": "Coming soon",
+    "placeholder": "Space reserved for the next featured project.",
     "labels": {
       "highlights": "Key highlights",
       "caseStudy": "Read case study",
@@ -70,6 +74,11 @@
           "Search and filter state synchronized through URL parameters for shareable, refresh-safe views",
           "Server-side filtering and pagination with responsive result navigation"
         ]
+      },
+      {
+        "title": "Music App",
+        "eyebrow": "Audio and state",
+        "description": "A web music player with synchronized playback, queue and playlist controls across the interface."
       }
     ]
   },

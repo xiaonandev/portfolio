@@ -12,7 +12,6 @@ type Props = {
   githubUrl: string;
   highlights?: string[];
   eyebrow: string;
-  caseStudy: { challenge: string; approach: string; outcome: string };
   labels: {
     highlights: string;
     caseStudy: string;
@@ -78,7 +77,7 @@ const ProjectCard = ({
         </Link>
       )}
 
-      <div className="p-6 flex flex-col flex-1">
+      <div className="flex flex-1 flex-col p-6">
         {eyebrow && (
           <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
             {eyebrow}
