@@ -24,9 +24,13 @@ const Project = () => {
     eyebrow: projectTranslations[index]?.eyebrow || p.eyebrow,
     caseStudy: projectTranslations[index]?.caseStudy || p.caseStudy,
   }));
-  const featuredProjects = projectList.slice(0, 2);
-  const moreWorks = projectList.slice(2);
-  const caseStudySlugs = ["workspace-dashboard", "video-feed"];
+  const featuredProjects = [projectList[2], projectList[0], projectList[1]];
+  const moreWorks = projectList.slice(3);
+  const caseStudySlugs = [
+    "invoice-analyzer",
+    "workspace-dashboard",
+    "video-feed",
+  ];
 
   return (
     <div className="py-5 bg-gray-100 dark:bg-gray-900">
@@ -55,16 +59,6 @@ const Project = () => {
             />
           ))}
 
-          <div className="flex min-h-96 items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white/40 px-8 text-center dark:border-gray-700 dark:bg-gray-950/30">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[.16em] text-cyan-700 dark:text-cyan-400">
-                {t("comingSoon")}
-              </p>
-              <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-                {t("placeholder")}
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="mx-auto mt-10 w-[88%] max-w-6xl">

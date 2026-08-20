@@ -9,7 +9,7 @@
     "downloadCv": "Download CV",
     "location": "Based in the Netherlands",
     "visa": "Zoekjaar Visa",
-    "authorization": "Full work authorization"
+    "authorization": "Full work authorisation"
   },
   "About": {
     "title1": "About",
@@ -26,7 +26,7 @@
       "backend": "Backend & Database",
 
       "styling": "Styling & UI",
-      "tools": "Tools"
+      "tools": "Tools & Cloud"
     }
   },
   "Projects": {
@@ -67,18 +67,27 @@
         ]
       },
       {
+        "title": "Invoice Analyser",
+        "eyebrow": "Cloud processing",
+        "description": "A full-stack invoice application that manages asynchronous AWS jobs and turns extracted data into a reviewable result.",
+        "highlights": [
+          "Controls asynchronous polling without overlapping requests",
+          "Normalises paginated Textract results before persistence"
+        ]
+      },
+      {
         "title": "Job Board Platform",
         "eyebrow": "Data-driven web application",
         "description": "A responsive job discovery interface with URL-driven search, multi-criteria filtering, and server-side pagination.",
         "highlights": [
-          "Search and filter state synchronized through URL parameters for shareable, refresh-safe views",
+          "Search and filter state synchronised through URL parameters for shareable, refresh-safe views",
           "Server-side filtering and pagination with responsive result navigation"
         ]
       },
       {
         "title": "Music App",
         "eyebrow": "Audio and state",
-        "description": "A web music player with synchronized playback, queue and playlist controls across the interface."
+        "description": "A web music player with synchronised playback, queue and playlist controls across the interface."
       }
     ]
   },

@@ -25,7 +25,7 @@
       "frontend": "Frontend & State",
       "backend": "Backend & Database",
       "styling": "Styling & UI",
-      "tools": "Tools"
+      "tools": "Tools & Cloud"
     }
   },
   "Projects": {
@@ -70,6 +70,15 @@
           "approach": "Serverdata en UI-state gescheiden, aankomende media vooraf geladen en voorkeuren en bookmarks gecentraliseerd in een persistente Zustand-store.",
           "outcome": "Een responsieve kijkervaring met naadloze navigatie tussen ontdekken en opgeslagen video's."
         }
+      },
+      {
+        "title": "Factuuranalyser",
+        "eyebrow": "Cloudverwerking",
+        "description": "Een full-stack applicatie die asynchrone AWS-taken beheert en geëxtraheerde factuurgegevens omzet in een controleerbaar resultaat.",
+        "highlights": [
+          "Beheert asynchrone polling zonder overlappende verzoeken",
+          "Normaliseert gepagineerde Textract-resultaten vóór opslag"
+        ]
       },
       {
         "title": "Vacatureplatform",

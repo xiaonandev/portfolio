@@ -13,12 +13,18 @@ const Skills = () => {
     {
       title: t("groups.frontend"),
       highlight: true,
-      skills: ["Zustand", "HTML5", "CSS3"],
+      skills: ["Zustand", "SWR", "HTML5", "CSS3"],
     },
     {
       title: t("groups.backend"),
       highlight: true,
-      skills: ["Prisma ORM", "PostgreSQL", "Zod", "REST APIs"],
+      skills: [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Zod",
+      ],
     },
     {
       title: t("groups.styling"),
@@ -28,7 +34,7 @@ const Skills = () => {
     {
       title: t("groups.tools"),
       highlight: false,
-      skills: ["Git", "ESLint", "Postman"],
+      skills: ["Git", "AWS (S3, Textract)", "ESLint", "Postman"],
     },
   ];
   return (
@@ -42,7 +48,7 @@ const Skills = () => {
 
         <div className="grid grid-cols-2 w-[70%] mx-auto space-y-10 ">
           {skillGroups.map((group) => (
-            <div key={group.title}>
+            <div key={group.title} className="min-w-0">
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 {group.highlight && (
                   <span className="w-2 h-2 rounded-full bg-cyan-500" />

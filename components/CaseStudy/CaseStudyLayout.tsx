@@ -12,6 +12,7 @@ type CaseStudyLayoutProps = {
   note?: string;
   image?: string;
   demo?: string;
+  showDemo?: boolean;
   github?: string;
   children?: ReactNode;
 };
@@ -23,25 +24,26 @@ export default function CaseStudyLayout({
   note,
   image,
   demo,
+  showDemo = false,
   github,
   children,
 }: CaseStudyLayoutProps) {
   return (
     <main className="min-h-screen bg-white text-gray-950 dark:bg-gray-950 dark:text-gray-50">
-      <section className="border-b border-gray-200 bg-white px-6 pb-16 pt-32 dark:border-gray-800 dark:bg-gray-950">
+      <section className="border-b border-gray-200 bg-white px-6 pb-12 pt-28 dark:border-gray-800 dark:bg-gray-950">
         <div className="mx-auto max-w-6xl">
           <BackButton />
           <div
-            className={`mt-10 grid gap-10 ${
+            className={`mt-8 grid gap-8 ${
               image ? "lg:grid-cols-[1.05fr_.95fr] lg:items-center" : ""
             }`}
           >
             <div className="max-w-3xl">
-              <h1 className="mt-4 text-5xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-6xl">
+              <h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-5xl">
                 {title}
               </h1>
               {description && (
-                <p className="mt-6 text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+                <p className="mt-5 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                   {description}
                 </p>
               )}
@@ -50,13 +52,18 @@ export default function CaseStudyLayout({
                   {note}
                 </p>
               )}
-              {(demo || github) && (
-                <div className="mt-8 flex flex-wrap gap-3">
+              {(demo || showDemo || github) && (
+                <div className="mt-6 flex flex-wrap gap-3">
                   {demo && (
                     <Button asChild>
                       <a href={demo} target="_blank" rel="noreferrer">
                         Live demo <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
+                    </Button>
+                  )}
+                  {!demo && showDemo && (
+                    <Button disabled aria-label="Live demo not yet available">
+                      Live demo <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   )}
                   {github && (
@@ -70,7 +77,7 @@ export default function CaseStudyLayout({
               )}
             </div>
             {image && (
-              <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 shadow-xl dark:border-gray-800 dark:bg-gray-900">
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 shadow-md dark:border-gray-800 dark:bg-gray-900">
                 <Image
                   src={image}
                   alt={`${title} application interface`}

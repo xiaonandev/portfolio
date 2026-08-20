@@ -13,6 +13,7 @@ export const projects = [
       "Prisma ORM",
       "Zod",
       "Recharts",
+      "Vitest",
     ],
     demoUrl: "https://workspace-dashboard-rho.vercel.app/",
     githubUrl: "https://github.com/xiaonandev/workspace-dashboard",
@@ -53,6 +54,28 @@ export const projects = [
     },
   },
   {
+    title: "Invoice Analyser",
+    description:
+      "A full-stack invoice application that turns asynchronous Amazon Textract results into reviewable and editable data.",
+    image: "/images/invoice-analyser.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Express",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Amazon S3",
+      "Amazon Textract",
+    ],
+    demoUrl: "https://file-analyses.vercel.app/analyses",
+    githubUrl: "https://github.com/xiaonandev/file-analyses",
+    eyebrow: "Cloud processing",
+    highlights: [
+      "Controls the lifecycle of asynchronous document-analysis jobs",
+      "Normalises paginated AWS results before persistence",
+    ],
+  },
+  {
     title: "Job Board Platform",
     description:
       "A full-stack job portal designed to streamline job searching and posting. Built with a focus on authenticated user sessions and data-driven interactions.",
@@ -75,7 +98,7 @@ export const projects = [
       challenge:
         "Design one product around distinct user roles while keeping protected actions and data relationships understandable.",
       approach:
-        "Built authenticated flows with Auth.js, modeled jobs and users in Prisma, and connected reusable form and listing patterns to server-side data.",
+        "Built authenticated flows with Auth.js, modelled jobs and users in Prisma, and connected reusable form and listing patterns to server-side data.",
       outcome:
         "An end-to-end product that demonstrates frontend delivery alongside authentication, database design and deployment.",
     },
@@ -83,7 +106,7 @@ export const projects = [
   {
     title: "Music App",
     description:
-      "A web music player with synchronized playback, queue and playlist controls across the interface.",
+      "A web music player with synchronised playback, queue and playlist controls across the interface.",
     image: "/images/music-app.png",
     techStack: [
       "Next.js",

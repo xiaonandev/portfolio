@@ -72,7 +72,7 @@ const ProjectCard = ({
           className="flex h-48 items-center justify-center bg-gray-100 px-8 text-center dark:bg-gray-800"
         >
           <span className="text-xl font-semibold tracking-tight text-gray-700 dark:text-gray-200">
-            Workspace Booking
+            {title}
           </span>
         </Link>
       )}
@@ -93,7 +93,7 @@ const ProjectCard = ({
           )}
         </h3>
 
-        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
+        <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
           {description}
         </p>
 
@@ -148,6 +148,17 @@ const ProjectCard = ({
                 <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
                 {labels.demo}
               </a>
+            </Button>
+          )}
+          {!demoUrl && (
+            <Button
+              disabled
+              size="sm"
+              className="flex-1 text-xs"
+              aria-label="Live demo not yet available"
+            >
+              <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+              {labels.demo}
             </Button>
           )}
           {githubUrl && (
