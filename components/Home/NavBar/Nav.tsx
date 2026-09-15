@@ -5,6 +5,7 @@ import ThemeToggler from "@/components/Helper/ThemeToggler";
 import { Navlinks } from "@/Constant/Constant";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useLocale } from "next-intl";
 type Props = {
   openNav: () => void;
@@ -43,6 +44,7 @@ const Nav = ({ openNav }: Props) => {
         </div>
         <div className="flex items-center space-x-4 justify-self-end">
           <ThemeToggler />
+          <LanguageSwitcher />
           <MenuIcon
             onClick={openNav}
             className="w-8 h-8 cursor-pointer text-black dark:text-white lg:hidden"

@@ -5,10 +5,10 @@ import { NextRequest, NextResponse } from 'next/server';
 const handleI18nRouting = createMiddleware(routing);
 
 export default function proxy(request: NextRequest) {
-  // Temporarily send existing translated links to their English equivalent.
-  if (/^\/(nl|ja)(\/|$)/.test(request.nextUrl.pathname)) {
+  // Keep links to the inactive Japanese locale working in English.
+  if (/^\/ja(\/|$)/.test(request.nextUrl.pathname)) {
     const url = request.nextUrl.clone();
-    url.pathname = url.pathname.replace(/^\/(nl|ja)(?=\/|$)/, '/en');
+    url.pathname = url.pathname.replace(/^\/ja(?=\/|$)/, '/en');
     return NextResponse.redirect(url);
   }
 
