@@ -4,11 +4,7 @@
     "role": "フルスタックエンジニア · フロントエンド重視",
     "headline": "董笑楠です。フロントエンドを強みとするフルスタックエンジニアです。",
     "description": "ReactとTypeScriptを中心とした商用フロントエンド経験に加え、Next.js、Prisma、PostgreSQLを用いたフルスタック開発経験があります。UIからAPI検証、リレーショナルデータ、デプロイまで一貫して取り組んでいます。",
-    "viewProjects": "プロジェクトを見る",
-    "downloadCv": "CVをダウンロード",
-    "location": "ロッテルダム、オランダ",
-    "visa": "Zoekjaar Visa",
-    "authorization": "就労制限なし"
+    "viewProjects": "プロジェクトを見る"
   },
   "About": {
     "title1": "私に",

@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowDownRight, Download, MapPin } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import React from "react";
 import { useTranslations } from "next-intl";
 
@@ -30,26 +30,10 @@ const Hero = () => {
                 <ArrowDownRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="w-fit bg-white/60 dark:bg-white/5"
-            >
-              <a href="/cv/Xiaonan Dong CV.pdf" download>
-                <Download className="mr-2 h-5 w-5" />
-                {t("downloadCv")}
-              </a>
-            </Button>
           </div>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-foreground/75">
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-cyan-700" />
-              {t("location")}
-            </span>
-            <span>{t("visa")}</span>
-            <span>{t("authorization")}</span>
-          </div>
+          <p className="mt-7 text-sm font-medium text-foreground/75">
+            {t("availability")}
+          </p>
         </div>
       </div>
     </div>

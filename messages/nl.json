@@ -5,11 +5,7 @@
     "greeting": "I’m Xiaonan",
     "headline": " Full-stack developer met een frontendfocus",
     "description": "React- en TypeScript-developer met commerciële frontendervaring en praktische ervaring met full-stack applicaties in Next.js, Prisma en PostgreSQL. Ik werk aan complete features, van responsieve interfaces tot API-validatie, relationele data en deployment.",
-    "viewProjects": "Bekijk geselecteerd werk",
-    "downloadCv": "Download CV",
-    "location": "Woonachtig in Nederland",
-    "visa": "Zoekjaar Visa",
-    "authorization": "Volledige werkvergunning"
+    "viewProjects": "Bekijk geselecteerd werk"
   },
   "About": {
     "title1": "Over",
