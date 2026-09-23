@@ -1,16 +1,16 @@
 {
   "Hero": {
-    "availability": "Beschikbaar voor full-stack- en frontendfuncties",
-    "role": "Full-stack developer · Frontendfocus",
+    "availability": "Beschikbaar voor frontendfuncties",
+    "role": "Frontend developer · React & TypeScript",
     "greeting": "I’m Xiaonan",
-    "headline": " Full-stack developer met een frontendfocus",
-    "description": "React- en TypeScript-developer met commerciële frontendervaring en praktische ervaring met full-stack applicaties in Next.js, Prisma en PostgreSQL. Ik werk aan complete features, van responsieve interfaces tot API-validatie, relationele data en deployment.",
+    "headline": "Frontend developer · React & TypeScript",
+    "description": "Ik bouw responsieve webapplicaties met React en TypeScript en heb commerciële frontendervaring. In mijn persoonlijke projecten werk ik ook aan backendontwikkeling met Next.js, Prisma en PostgreSQL.",
     "viewProjects": "Bekijk geselecteerd werk"
   },
   "About": {
     "title1": "Over",
     "title2": "Mij",
-    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een full-stack developer met een frontendfocus. Mijn sterkste tools zijn React en TypeScript. Ik zet graag UI-ontwerpen om in responsieve applicaties met duidelijke state en verzorgde interacties.\n\nDaarnaast bouw ik features met Next.js route handlers, runtimevalidatie, authenticatie en relationele data via Prisma en PostgreSQL. Zo kan ik een feature volgen van de interface tot het gedrag van de API en database.\n\nIn mijn vorige frontendrol werkte ik samen met ontwerpers, backend engineers en een mobiel team. Ik zoek een junior full-stack- of frontendfunctie waarin ik over het hele product kan bijdragen en mijn backendkennis verder kan verdiepen.",
+    "description": "Hoi, ik ben Xiaonan. 👋\n\nIk ben een frontend developer en werk met React en TypeScript. Ik zet graag UI-ontwerpen om in responsieve applicaties met duidelijke state en verzorgde interacties.\n\nIn mijn vorige frontendrol werkte ik samen met ontwerpers, backend engineers en een mobiel team aan webinterfaces en API-integraties. Ik zoek een frontendfunctie waarin ik kan bijdragen aan doordachte, betrouwbare gebruikerservaringen.\n\nIn mijn persoonlijke projecten werk ik ook met Next.js route handlers, runtimevalidatie, authenticatie en relationele data via Prisma en PostgreSQL. Die ervaring helpt me te begrijpen hoe de interface aansluit op de API en database.",
     "beyondLink": "Beyond coding: muziek, kunst en iets meer over mij"
   },
   "Skills": {

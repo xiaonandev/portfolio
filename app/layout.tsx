@@ -4,9 +4,9 @@ import Provider from '@/components/HOC/provider';
 import ScrollToTop from '@/components/Helper/ScrollToTop';
 
 export const metadata: Metadata = {
-  title: "Xiaonan Dong — Full-stack Developer",
+  title: "Xiaonan Dong — Frontend Developer",
   description:
-    "Full-stack developer portfolio with a frontend focus, featuring React, TypeScript, Next.js, Prisma and PostgreSQL projects.",
+    "Frontend developer portfolio featuring React and TypeScript interfaces, commercial frontend experience, and personal projects using Next.js, Prisma and PostgreSQL.",
 };
 
 export default function RootLayout({

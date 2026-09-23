@@ -1,16 +1,16 @@
 {
   "Hero": {
-    "availability": "Open to full-stack and frontend opportunities",
-    "role": "Full-stack Developer · Frontend Focus",
+    "availability": "Open to frontend opportunities",
+    "role": "Frontend Developer · React & TypeScript",
     "greeting": "I’m Xiaonan",
-    "headline": " Full-stack Developer with a frontend focus",
-    "description": "React and TypeScript developer with commercial frontend experience and hands-on experience building full-stack applications with Next.js, Prisma and PostgreSQL. I carry features from responsive interfaces through API validation, relational data and deployment.",
+    "headline": "Frontend Developer · React & TypeScript",
+    "description": "I build responsive web applications with React and TypeScript, drawing on commercial frontend experience. My personal projects also include backend development with Next.js, Prisma and PostgreSQL.",
     "viewProjects": "View projects"
   },
   "About": {
     "title1": "About",
     "title2": "Me",
-    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a full-stack developer with a frontend focus. My strongest tools are React and TypeScript, and I enjoy turning UI designs into responsive applications with clear state and polished interactions.\n\nI also build features across Next.js route handlers, runtime validation, authentication and relational data using Prisma and PostgreSQL. This allows me to follow a feature from the interface through its API and database behaviour.\n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team. I’m looking for junior full-stack and frontend opportunities where I can contribute across the product while continuing to deepen my backend experience.",
+    "description": "Hi, I'm Xiaonan. 👋\n\nI’m a frontend developer working with React and TypeScript. I enjoy turning UI designs into responsive applications with clear state and polished interactions.\n\nIn my previous frontend role, I collaborated with designers, backend engineers and a mobile team to build web interfaces and integrate APIs. I’m looking for frontend opportunities where I can contribute to thoughtful, reliable user experiences.\n\nMy personal projects also include Next.js route handlers, runtime validation, authentication and relational data using Prisma and PostgreSQL. This experience helps me understand how the interface connects to the API and database.",
     "beyondLink": "Beyond coding: music, art and a little more about me"
   },
   "Skills": {
