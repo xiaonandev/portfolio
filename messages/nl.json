@@ -5,7 +5,8 @@
     "greeting": "I’m Xiaonan",
     "headline": "Frontend developer · React & TypeScript",
     "description": "Ik bouw responsieve webapplicaties met React en TypeScript en heb commerciële frontendervaring. In mijn persoonlijke projecten werk ik ook aan backendontwikkeling met Next.js, Prisma en PostgreSQL.",
-    "viewProjects": "Bekijk geselecteerd werk"
+    "viewProjects": "Bekijk geselecteerd werk",
+    "downloadCv": "Download CV"
   },
   "About": {
     "title1": "Over",

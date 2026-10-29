@@ -4,7 +4,8 @@
     "role": "フロントエンドエンジニア · React & TypeScript",
     "headline": "フロントエンドエンジニア · React & TypeScript",
     "description": "実務でのフロントエンド開発経験を活かし、ReactとTypeScriptでレスポンシブなWebアプリケーションを開発しています。個人プロジェクトでは、Next.js、Prisma、PostgreSQLを使ったバックエンド開発にも取り組んでいます。",
-    "viewProjects": "プロジェクトを見る"
+    "viewProjects": "プロジェクトを見る",
+    "downloadCv": "CVをダウンロード"
   },
   "About": {
     "title1": "私に",

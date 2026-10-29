@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight, Download } from "lucide-react";
 import React from "react";
 import { useTranslations } from "next-intl";
 
@@ -28,6 +28,12 @@ const Hero = () => {
               <a href="#projects">
                 {t("viewProjects")}
                 <ArrowDownRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="w-fit">
+              <a href="/cv/Xiaonan%20Dong%20CV.pdf" download>
+                {t("downloadCv")}
+                <Download className="ml-2 h-5 w-5" />
               </a>
             </Button>
           </div>

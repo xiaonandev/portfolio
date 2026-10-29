@@ -5,7 +5,8 @@
     "greeting": "I’m Xiaonan",
     "headline": "Frontend Developer · React & TypeScript",
     "description": "I build responsive web applications with React and TypeScript, drawing on commercial frontend experience. My personal projects also include backend development with Next.js, Prisma and PostgreSQL.",
-    "viewProjects": "View projects"
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV"
   },
   "About": {
     "title1": "About",
